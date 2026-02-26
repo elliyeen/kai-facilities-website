@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import HeroCountdown from "@/components/HeroCountdown";
 
 const DALLAS_MATCHES = [
   { stage: "Group Stage",  date: "Jun 14, 2026", time: "3:00 PM CT",  home: "Netherlands",          away: "Japan",                   group: "Group F" },
@@ -14,10 +15,6 @@ const DALLAS_MATCHES = [
 ];
 
 export default function WorldCup2026Page() {
-  const daysUntil = Math.ceil(
-    (new Date("2026-06-11").getTime() - Date.now()) / (1000 * 60 * 60 * 24)
-  );
-
   return (
     <div className="min-h-screen bg-black text-white">
 
@@ -47,32 +44,45 @@ export default function WorldCup2026Page() {
       </nav>
 
       {/* Hero */}
-      <section className="min-h-screen flex items-end pb-32 pt-40">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
-          <div className="grid lg:grid-cols-2 gap-20 items-end">
-            <div>
-              <p className="text-sm font-light tracking-[0.4em] text-white/40 mb-6 uppercase">FIFA World Cup 2026</p>
-              <div className="text-[140px] lg:text-[200px] font-light leading-none">{daysUntil}</div>
-              <p className="text-2xl font-light text-white/60 mt-4">days until the world arrives in Dallas.</p>
-            </div>
-            <div className="lg:pb-4">
-              <p className="text-xl font-light text-white/50 leading-relaxed mb-10">
-                Nine matches. AT&T Stadium. 100,000+ daily visitors.
-                DART must handle a 286% surge in ridership with zero tolerance for failure.
-              </p>
-              <Link
-                href="/contact"
-                className="inline-block border border-white px-8 py-4 text-sm font-light tracking-wide hover:bg-white hover:text-black transition"
-              >
-                REQUEST PILOT PROGRAM
-              </Link>
-            </div>
+      <section className="min-h-screen flex items-center pt-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-24 lg:py-32">
+
+          <p className="text-xs font-light tracking-[0.4em] text-white/30 mb-12 uppercase">
+            FIFA World Cup 2026 · AT&T Stadium · Arlington, Texas
+          </p>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.1] mb-6 max-w-5xl">
+            9 matches at AT&T Stadium, Arlington —
+          </h1>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.1] text-white/40 mb-20 max-w-5xl">
+            is DART prepared for the largest surge in transit demand in history?
+          </h1>
+
+          {/* Live countdown */}
+          <div className="mb-16">
+            <HeroCountdown />
           </div>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="/contact"
+              className="inline-block bg-white text-black px-10 py-4 text-sm font-light tracking-wide hover:bg-white/90 transition"
+            >
+              REQUEST PILOT PROGRAM
+            </Link>
+            <Link
+              href="#challenge"
+              className="inline-block border border-white/20 px-10 py-4 text-sm font-light tracking-wide hover:border-white/60 transition"
+            >
+              SEE THE CHALLENGE
+            </Link>
+          </div>
+
         </div>
       </section>
 
       {/* The Challenge */}
-      <section className="py-32 bg-white text-black">
+      <section id="challenge" className="py-24 bg-white text-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-20">
             <div>
@@ -101,7 +111,7 @@ export default function WorldCup2026Page() {
       </section>
 
       {/* Match Schedule */}
-      <section className="py-32 bg-white text-black">
+      <section className="py-24 bg-white text-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mb-20">
             <p className="text-sm font-light tracking-[0.3em] text-gray-400 mb-6 uppercase">AT&T Stadium · Arlington, Texas</p>
@@ -128,7 +138,7 @@ export default function WorldCup2026Page() {
       </section>
 
       {/* KAI Solution */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-24 bg-black text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mb-20">
             <p className="text-sm font-light tracking-[0.3em] text-white/30 mb-6 uppercase">KAI Solution</p>
@@ -170,7 +180,7 @@ export default function WorldCup2026Page() {
       </section>
 
       {/* Roadmap */}
-      <section className="py-32 bg-white text-black">
+      <section className="py-24 bg-white text-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-20 mb-20">
             <div>
@@ -207,10 +217,10 @@ export default function WorldCup2026Page() {
       </section>
 
       {/* CTA */}
-      <section className="py-32 bg-black border-t border-white/10">
+      <section className="py-24 bg-black border-t border-white/10">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-5xl lg:text-6xl font-light mb-8">
-            {daysUntil} days to get ready.
+            The clock is running.
           </h2>
           <p className="text-xl font-light text-white/60 mb-12 max-w-2xl mx-auto">
             Start with a pilot program across 3–5 stations. See results in 30 days.

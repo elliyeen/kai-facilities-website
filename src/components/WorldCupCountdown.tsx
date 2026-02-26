@@ -36,49 +36,53 @@ export default function WorldCupCountdown() {
 
   const pad = (n: number) => String(n).padStart(2, "0");
 
+  const units = [
+    { value: String(timeLeft.days), label: "DAYS" },
+    { value: pad(timeLeft.hours), label: "HRS" },
+    { value: pad(timeLeft.minutes), label: "MIN" },
+    { value: pad(timeLeft.seconds), label: "SEC" },
+  ];
+
   return (
-    <section className="py-32 bg-black border-t border-white/10">
+    <section className="py-24 bg-black border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+          {/* Countdown */}
           <div>
-            {/* Live countdown */}
-            <div className="flex items-end gap-6 mb-4">
-              <div className="text-center">
-                <div className="text-8xl font-light tabular-nums">{timeLeft.days}</div>
-                <div className="text-xs font-light text-white/40 mt-1 tracking-widest">DAYS</div>
-              </div>
-              <div className="text-6xl font-light text-white/30 mb-3">:</div>
-              <div className="text-center">
-                <div className="text-8xl font-light tabular-nums">{pad(timeLeft.hours)}</div>
-                <div className="text-xs font-light text-white/40 mt-1 tracking-widest">HRS</div>
-              </div>
-              <div className="text-6xl font-light text-white/30 mb-3">:</div>
-              <div className="text-center">
-                <div className="text-8xl font-light tabular-nums">{pad(timeLeft.minutes)}</div>
-                <div className="text-xs font-light text-white/40 mt-1 tracking-widest">MIN</div>
-              </div>
-              <div className="text-6xl font-light text-white/30 mb-3">:</div>
-              <div className="text-center">
-                <div className="text-8xl font-light tabular-nums">{pad(timeLeft.seconds)}</div>
-                <div className="text-xs font-light text-white/40 mt-1 tracking-widest">SEC</div>
-              </div>
+            <p className="text-xs font-light tracking-[0.3em] text-white/30 mb-10 uppercase">Time Remaining</p>
+            <div className="flex items-end gap-4 lg:gap-6 mb-8">
+              {units.map((unit, i) => (
+                <div key={unit.label} className="flex items-end gap-4 lg:gap-6">
+                  {i > 0 && (
+                    <div className="text-3xl lg:text-4xl font-light text-white/20 pb-6">:</div>
+                  )}
+                  <div>
+                    <div className="text-5xl lg:text-6xl xl:text-7xl font-light tabular-nums leading-none">
+                      {unit.value}
+                    </div>
+                    <div className="text-xs font-light text-white/40 mt-3 tracking-[0.25em]">{unit.label}</div>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            <div className="text-xl font-light text-white/60 mb-12">
-              Until FIFA World Cup 2026 kicks off
-            </div>
+            <p className="text-sm font-light text-white/40 mb-10">Until FIFA World Cup 2026 · June 11, 2026</p>
             <div className="h-px bg-white/10 mb-8"></div>
-            <p className="text-lg font-light text-white/80 leading-relaxed">
-              June 11 – July 19, 2026<br />
-              48 teams · 16 cities · 104 matches<br />
-              Hosted by USA, Mexico &amp; Canada<br />
-              Opening: Estadio Azteca, Mexico City<br />
-              Final: MetLife Stadium, New Jersey
+            <p className="text-sm font-light text-white/40 leading-relaxed">
+              June 11 – July 19, 2026 &nbsp;·&nbsp; 48 teams &nbsp;·&nbsp; 16 cities &nbsp;·&nbsp; 104 matches<br />
+              USA, Mexico &amp; Canada &nbsp;·&nbsp; Final: MetLife Stadium, NJ
             </p>
           </div>
-          <div>
-            <p className="text-3xl font-light mb-8 leading-relaxed">
-              9 matches at AT&T Stadium, Arlington — is DART prepared for the largest surge in transit demand in history?
+
+          {/* Right column */}
+          <div className="lg:pl-8 lg:border-l lg:border-white/10">
+            <p className="text-xs font-light tracking-[0.3em] text-white/30 mb-8 uppercase">Dallas · AT&T Stadium</p>
+            <p className="text-2xl lg:text-3xl font-light leading-relaxed mb-4">
+              9 matches at AT&T Stadium, Arlington —
+            </p>
+            <p className="text-2xl lg:text-3xl font-light leading-relaxed text-white/50 mb-12">
+              is DART prepared for the largest surge in transit demand in history?
             </p>
             <Link
               href="/world-cup-2026"
@@ -87,6 +91,7 @@ export default function WorldCupCountdown() {
               VIEW READINESS PLAN
             </Link>
           </div>
+
         </div>
       </div>
     </section>
