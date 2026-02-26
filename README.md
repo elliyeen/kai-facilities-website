@@ -1,26 +1,27 @@
-# KAI — AI-Powered Facility Intelligence
+# KAI — The Operating System for Cities and Enterprise
 
-Preparing Dallas transit infrastructure for FIFA World Cup 2026.
-
-KAI is a real-time facility intelligence platform built for DART (Dallas Area Rapid Transit). It combines predictive AI, live analytics, and automated workflows to ensure every station is inspection-ready for the 300%+ ridership surge expected during the 2026 World Cup.
+KAI unifies data, operations, and intelligence into a single platform — turning complexity into clarity, at any scale. Built initially for DART (Dallas Area Rapid Transit), KAI is purpose-built to handle the real-world demands of large-scale infrastructure, including the 300%+ ridership surge expected during FIFA World Cup 2026.
 
 ---
 
-## Features
+## Platform
 
-- **Predictive AI** — Forecasts maintenance needs 4 hours ahead with 94.2% accuracy
-- **Real-Time Analytics** — Live command center across all 73 DART stations via GPS and IoT sensors
-- **Automated Workflows** — AI-driven task routing and rapid response team deployment in under 5 minutes
-- **Station Inventory System** — Complete digital twin of all 73 stations with 247 inspection points each (18,031 total)
+KAI is built on three layers — the **Kai Fabric**:
+
+| Layer | Description |
+|---|---|
+| **Data Fabric** | Connects every data source across stations, vehicles, and systems into a unified real-time picture |
+| **Operations Intelligence** | Predictive AI forecasts maintenance needs 4 hours ahead with 94.2% accuracy |
+| **Workflow Automation** | AI-driven task routing and rapid-response team deployment in under 5 minutes |
 
 ---
 
 ## Tech Stack
 
 - [Next.js 15](https://nextjs.org) (App Router, Turbopack)
-- TypeScript
-- Tailwind CSS
-- Docker + CI/CD pipeline
+- React 19 + TypeScript
+- Tailwind CSS v4
+- Docker + CI/CD (GitHub Actions → ECS Fargate)
 
 ---
 
@@ -40,9 +41,9 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 | Route | Description |
 |---|---|
 | `/` | Home — hero, stats, platform overview |
-| `/platform` | Platform feature deep-dive |
-| `/world-cup-2026` | FIFA 2026 countdown and readiness tracker |
-| `/contact` | Contact / demo request |
+| `/platform` | The Kai Fabric — three-layer architecture deep-dive |
+| `/world-cup-2026` | FIFA 2026 countdown, Dallas match schedule, readiness tracker |
+| `/contact` | Contact / demo request form |
 
 ---
 
@@ -57,7 +58,17 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 | Match Day Ridership Surge | +286% |
 | AI Forecast Accuracy | 94.2% |
 | Incident Response Time | < 30 seconds |
+| Dallas FIFA 2026 Matches | 9 (Group → Semi-Final) |
 
 ---
 
-© 2024 KAI. AI-Powered Facility Intelligence.
+## Infrastructure
+
+- **Docker**: 3-stage Dockerfile, docker-compose for local dev
+- **Terraform**: Modules for VPC/networking, ECR, and ECS
+- **CI/CD**: GitHub Actions — lint/build on PR, deploy to ECS on push to `main`
+- **AWS Target**: ECS Fargate, us-east-1, ALB on port 80 → container 3000
+
+---
+
+© 2026 KAI. The Operating System for Cities and Enterprise.
