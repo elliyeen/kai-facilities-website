@@ -145,13 +145,13 @@ export default function Home() {
             <div>
               <p className="text-sm font-light tracking-[0.3em] text-white/30 mb-6 uppercase">Live Deployment</p>
               <h2 className="text-5xl font-light leading-tight">
-                Kai is live across<br />73 DART stations<br />today.
+                Kai is live across<br />65 DART stations<br />today.
               </h2>
             </div>
             <div className="lg:pt-16">
               <p className="text-xl font-light text-white/50 leading-relaxed mb-8">
                 The Dallas Area Rapid Transit network is our proving ground.
-                18,031 inspection points, 163 light rail vehicles, and the world's
+                16,055 inspection points across 93 miles of light rail, and the world's
                 biggest sporting event bearing down in {Math.ceil((new Date("2026-06-11").getTime() - Date.now()) / (1000 * 60 * 60 * 24))} days.
               </p>
               <Link
@@ -167,8 +167,8 @@ export default function Home() {
           {/* Stats */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 mb-20 border-t border-white/10 pt-20">
             {[
-              { value: "73",      label: "DART STATIONS" },
-              { value: "18,031", label: "INSPECTION POINTS" },
+              { value: "65",      label: "DART STATIONS" },
+              { value: "16,055", label: "INSPECTION POINTS" },
               { value: "94.2%",  label: "AI ACCURACY" },
               { value: "<30s",   label: "ALERT-TO-ACTION" },
             ].map((s) => (

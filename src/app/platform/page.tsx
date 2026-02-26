@@ -32,7 +32,7 @@ export default function PlatformPage() {
 
       {/* Hero */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/dart/20260223_191335.jpg')] bg-cover bg-center opacity-40"></div>
+        <div className="absolute inset-0 bg-[url('/images/dart/20260223_191335.jpg')] bg-cover bg-center opacity-[.65]"></div>
         <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black"></div>
         {/* Subtle grid overlay */}
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)", backgroundSize: "80px 80px" }}></div>
@@ -191,7 +191,7 @@ export default function PlatformPage() {
                 icon: <Map className="w-5 h-5" />,
                 title: "Digital Twin",
                 desc: "A complete digital replica of every facility under management. 247 inspection checkpoints per station generate compliance-ready audit reports in under 2 minutes.",
-                stat: "18,031",
+                stat: "16,055",
                 statLabel: "MAPPED CHECKPOINTS",
               },
               {
@@ -256,7 +256,7 @@ export default function PlatformPage() {
 
           <div className="border-t border-gray-200">
             {[
-              { num: "01", industry: "Transit & Cities",      desc: "Rail networks, bus systems, and urban transit — unified operational management across every station, vehicle, and crew.", proof: "73 DART stations live" },
+              { num: "01", industry: "Transit & Cities",      desc: "Rail networks, bus systems, and urban transit — unified operational management across every station, vehicle, and crew.", proof: "65 DART stations live" },
               { num: "02", industry: "Stadiums & Events",     desc: "From daily operations to 100,000-person surge events. FIFA 2026 World Cup deployment across 9 Dallas match days.", proof: "FIFA 2026 ready" },
               { num: "03", industry: "Enterprise Facilities", desc: "Large-scale facility portfolios — corporate campuses, convention centers, mixed-use real estate — all in one operating picture.", proof: "Enterprise-grade" },
               { num: "04", industry: "Healthcare",            desc: "Hospital environments where compliance, cleanliness, and response time are mission-critical. Continuous inspection and accountability.", proof: "HIPAA-compatible" },
@@ -366,8 +366,8 @@ export default function PlatformPage() {
           </div>
           <div className="border-t border-gray-200 pt-16 grid lg:grid-cols-2 gap-x-20">
             {[
-              { label: "STATIONS UNDER MANAGEMENT",   value: "73" },
-              { label: "TOTAL INSPECTION POINTS",     value: "18,031" },
+              { label: "STATIONS UNDER MANAGEMENT",   value: "65" },
+              { label: "TOTAL INSPECTION POINTS",     value: "16,055" },
               { label: "INSPECTION POINTS / STATION", value: "247" },
               { label: "REPORT GENERATION TIME",      value: "<2 min" },
               { label: "TEAM DEPLOYMENT TIME",        value: "<5 min" },

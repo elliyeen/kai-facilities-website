@@ -146,7 +146,7 @@ export default function WorldCup2026Page() {
                 num: "02",
                 title: "Real-Time Command Center",
                 stat: "<30s", label: "ALERT TO ACTION",
-                desc: "Live visibility across all 73 DART stations. Staff GPS, IoT sensor feeds, and incident alerts surfaced in under 30 seconds.",
+                desc: "Live visibility across all 65 DART stations. Staff GPS, IoT sensor feeds, and incident alerts surfaced in under 30 seconds.",
               },
               {
                 num: "03",
@@ -187,7 +187,7 @@ export default function WorldCup2026Page() {
           <div className="border-t border-gray-200">
             {[
               { phase: "01", title: "Pilot Program",          period: "Q2 2025",       desc: "3–5 high-traffic stations. AI models validated, baseline metrics established, initial staff trained." },
-              { phase: "02", title: "System-Wide Rollout",    period: "Q3–Q4 2025",    desc: "All 73 DART stations live. Full sensor network deployed, complete staff onboarding, DART operations integrated." },
+              { phase: "02", title: "System-Wide Rollout",    period: "Q3–Q4 2025",    desc: "All 65 DART stations live. Full sensor network deployed, complete staff onboarding, DART operations integrated." },
               { phase: "03", title: "Surge Capacity Testing", period: "Q1 2026",        desc: "Full-scale simulations of World Cup conditions. AI models fine-tuned, rapid response protocols validated." },
               { phase: "04", title: "FIFA World Cup 2026",    period: "Jun – Jul 2026", desc: "24/7 command center operations across 9 match days. Real-time coordination. World-class facility standards maintained." },
             ].map((item) => (
