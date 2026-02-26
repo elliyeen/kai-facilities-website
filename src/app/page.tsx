@@ -172,7 +172,7 @@ export default function Home() {
       {/* Platform - Minimal */}
       <section className="relative py-32 bg-black overflow-hidden">
         <Image
-          src="/images/dart/20260223_191302.jpg"
+          src="/images/dart/20260223_191335.jpg"
           alt="DART Platform"
           fill
           className="object-cover opacity-50"
