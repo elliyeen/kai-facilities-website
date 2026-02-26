@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KAI — AI-Powered Facility Intelligence
+
+Preparing Dallas transit infrastructure for FIFA World Cup 2026.
+
+KAI is a real-time facility intelligence platform built for DART (Dallas Area Rapid Transit). It combines predictive AI, live analytics, and automated workflows to ensure every station is inspection-ready for the 300%+ ridership surge expected during the 2026 World Cup.
+
+---
+
+## Features
+
+- **Predictive AI** — Forecasts maintenance needs 4 hours ahead with 94.2% accuracy
+- **Real-Time Analytics** — Live command center across all 73 DART stations via GPS and IoT sensors
+- **Automated Workflows** — AI-driven task routing and rapid response team deployment in under 5 minutes
+- **Station Inventory System** — Complete digital twin of all 73 stations with 247 inspection points each (18,031 total)
+
+---
+
+## Tech Stack
+
+- [Next.js 15](https://nextjs.org) (App Router, Turbopack)
+- TypeScript
+- Tailwind CSS
+- Docker + CI/CD pipeline
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Pages
 
-## Learn More
+| Route | Description |
+|---|---|
+| `/` | Home — hero, stats, platform overview |
+| `/platform` | Platform feature deep-dive |
+| `/world-cup-2026` | FIFA 2026 countdown and readiness tracker |
+| `/contact` | Contact / demo request |
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Key Stats
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Metric | Value |
+|---|---|
+| DART Stations | 73 |
+| Inspection Points / Station | 247 |
+| Total Inspection Points | 18,031 |
+| Light Rail Vehicles | 163 |
+| Match Day Ridership Surge | +286% |
+| AI Forecast Accuracy | 94.2% |
+| Incident Response Time | < 30 seconds |
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2024 KAI. AI-Powered Facility Intelligence.
