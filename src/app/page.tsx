@@ -3,6 +3,12 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import WorldCupCountdown from "@/components/WorldCupCountdown";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+const daysUntilWorldCup = Math.ceil(
+  (new Date("2026-06-11").getTime() - Date.now()) / (1000 * 60 * 60 * 24)
+);
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
@@ -31,7 +37,7 @@ export default function Home() {
       {/* Hero - Full Screen */}
       <section className="h-screen flex items-center justify-center relative">
         <Image
-          src="/images/dart/parkeroad.jpg"
+          src={`${basePath}/images/dart/parkeroad.jpg`}
           alt="DART Parker Road Station"
           fill
           className="object-cover"
@@ -95,7 +101,7 @@ export default function Home() {
                 <div>
                   <div className="flex justify-between items-baseline mb-2">
                     <span className="text-sm font-light text-gray-500">DAYS UNTIL WORLD CUP</span>
-                    <span className="text-4xl font-light">841</span>
+                    <span className="text-4xl font-light">{daysUntilWorldCup}</span>
                   </div>
                   <div className="h-px bg-gray-200"></div>
                 </div>
@@ -172,7 +178,7 @@ export default function Home() {
       {/* Platform - Minimal */}
       <section className="relative py-32 bg-black overflow-hidden">
         <Image
-          src="/images/dart/20260223_191335.jpg"
+          src={`${basePath}/images/dart/20260223_191335.jpg`}
           alt="DART Platform"
           fill
           className="object-cover opacity-50"
@@ -295,7 +301,7 @@ export default function Home() {
             Ready for FIFA 2026?
           </h2>
           <p className="text-xl font-light text-white/60 mb-12">
-            841 days to prepare DART for the world's biggest event
+            {daysUntilWorldCup} days to prepare DART for the world's biggest event
           </p>
           <Link
             href="/contact"
