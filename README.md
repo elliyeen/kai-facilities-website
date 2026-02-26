@@ -1,5 +1,7 @@
 # KAI — The Operating System for Cities and Enterprise
 
+**[Live Site →](https://elliyeen.github.io/kai-facilities-website/)**
+
 KAI unifies data, operations, and intelligence into a single platform — turning complexity into clarity, at any scale. Built initially for DART (Dallas Area Rapid Transit), KAI is purpose-built to handle the real-world demands of large-scale infrastructure, including the 300%+ ridership surge expected during FIFA World Cup 2026.
 
 ---
