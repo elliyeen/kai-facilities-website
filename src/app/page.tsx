@@ -43,18 +43,18 @@ export default function Home() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/35"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0 bg-linear-to-b from-black/40 via-transparent to-black"></div>
         {/* Subtle grid */}
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "80px 80px" }}></div>
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
           <p className="text-sm font-light tracking-[0.4em] text-white/40 mb-8 uppercase">Kai</p>
           <h1 className="text-6xl lg:text-8xl font-light mb-8 tracking-tight leading-none">
-            The Operating System<br />
-            <span className="text-white/60">for Cities and Enterprise.</span>
+            Operate and Monitor<br />
+            <span className="text-white/60">your City and Enterprise.</span>
           </h1>
           <p className="text-xl lg:text-2xl font-light text-white/60 mb-16 max-w-3xl mx-auto leading-relaxed">
-            Data, operations, and intelligence — unified into one platform.
+            Data, operations, and intelligence — unified into one platform.<br />
             From a single transit station to an entire city network.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
