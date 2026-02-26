@@ -1,0 +1,7 @@
+aws_region     = "us-east-1"
+app_name       = "kai-facilities"
+environment    = "production"
+container_port = 3000
+desired_count  = 2
+task_cpu       = 512
+task_memory    = 1024

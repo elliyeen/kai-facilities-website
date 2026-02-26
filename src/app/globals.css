@@ -1,13 +1,35 @@
 @import "tailwindcss";
 
+/* KAI Brand Colors - Inspired by Hoopoe Bird */
 :root {
+  /* Primary - Hoopoe Crest Orange */
+  --kai-primary: #FF6B35;
+  --kai-primary-dark: #E85A27;
+
+  /* Secondary - Hoopoe Wing Blue-Gray */
+  --kai-secondary: #2C3E50;
+  --kai-secondary-light: #34495E;
+
+  /* Accent - Military Precision Green */
+  --kai-accent: #27AE60;
+
+  /* Neutrals */
+  --kai-bg: #F8F9FA;
+  --kai-text: #212529;
+  --kai-text-muted: #6C757D;
+
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #212529;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-kai-primary: var(--kai-primary);
+  --color-kai-primary-dark: var(--kai-primary-dark);
+  --color-kai-secondary: var(--kai-secondary);
+  --color-kai-secondary-light: var(--kai-secondary-light);
+  --color-kai-accent: var(--kai-accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -22,5 +44,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
