@@ -32,7 +32,7 @@ export default function PlatformPage() {
 
       {/* Hero */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/dart/20260223_191335.jpg')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('/images/dart/20260223_191335.jpg')] bg-cover bg-center opacity-40"></div>
         <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black"></div>
         {/* Subtle grid overlay */}
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)", backgroundSize: "80px 80px" }}></div>
