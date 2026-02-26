@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Database, Cpu, Workflow, BarChart3, Smartphone, Map, Building2, Train, Trophy, Heart, Zap } from "lucide-react";
+import { ArrowRight, Database, Cpu, Workflow, BarChart3, Smartphone, Map } from "lucide-react";
 
 export default function PlatformPage() {
   return (
@@ -465,6 +465,7 @@ export default function PlatformPage() {
             <div className="flex gap-8">
               <Link href="/platform" className="text-sm font-light text-white/40 hover:text-white transition">Platform</Link>
               <Link href="/world-cup-2026" className="text-sm font-light text-white/40 hover:text-white transition">FIFA 2026</Link>
+              <Link href="/#about" className="text-sm font-light text-white/40 hover:text-white transition">About</Link>
               <Link href="/contact" className="text-sm font-light text-white/40 hover:text-white transition">Contact</Link>
             </div>
           </div>
