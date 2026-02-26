@@ -43,7 +43,7 @@ export default function Home() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="absolute inset-0 bg-linear-to-b from-black/40 via-transparent to-black"></div>
         {/* Subtle grid */}
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "80px 80px" }}></div>
@@ -207,9 +207,9 @@ export default function Home() {
           src={`${basePath}/images/dart/20260223_191335.jpg`}
           alt="DART Platform operations"
           fill
-          className="object-cover opacity-30"
+          className="object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/50 to-black/80"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/20 to-black/60"></div>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mb-20">
             <p className="text-sm font-light tracking-[0.3em] text-white/30 mb-6 uppercase">Capabilities</p>
