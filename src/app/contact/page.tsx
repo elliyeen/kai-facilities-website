@@ -269,7 +269,7 @@ export default function ContactPage() {
 
               {/* FIFA 2026 note */}
               <div className="bg-black text-white p-8">
-                <Trophy className="w-5 h-5 text-[#FF6B35] mb-6" />
+                <Trophy className="w-5 h-5 text-white/60 mb-6" />
                 <div className="text-xs font-light tracking-widest text-white/30 mb-3 uppercase">FIFA World Cup 2026</div>
                 <div className="text-3xl font-light mb-4">{daysUntil} days.</div>
                 <p className="text-sm font-light text-white/50 leading-relaxed mb-8">

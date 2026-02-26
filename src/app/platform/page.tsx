@@ -222,14 +222,14 @@ export default function PlatformPage() {
               <div key={module.num} className="group">
                 <div className="flex items-start justify-between mb-6">
                   <div className="text-5xl font-light text-white/20">{module.num}</div>
-                  <div className="w-9 h-9 border border-white/10 flex items-center justify-center text-white/30 group-hover:border-[#FF6B35] group-hover:text-[#FF6B35] transition">
+                  <div className="w-9 h-9 border border-white/10 flex items-center justify-center text-white/70 transition">
                     {module.icon}
                   </div>
                 </div>
                 <h3 className="text-xl font-light mb-4">{module.title}</h3>
-                <p className="font-light text-white/50 leading-relaxed text-sm">{module.desc}</p>
+                <p className="font-light text-white/70 leading-relaxed text-sm">{module.desc}</p>
                 <div className="mt-8 pt-6 border-t border-white/10">
-                  <div className="text-xs font-light text-white/30 tracking-widest">{module.statLabel}</div>
+                  <div className="text-xs font-light text-white/70 tracking-widest">{module.statLabel}</div>
                   <div className="text-3xl font-light mt-2">{module.stat}</div>
                 </div>
               </div>
