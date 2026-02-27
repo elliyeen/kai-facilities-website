@@ -353,32 +353,48 @@ export default function PlatformPage() {
             <h2 className="text-5xl font-light">Numbers that matter.</h2>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 mb-24">
-            {[
-              { value: "94.2%", label: "AI PREDICTION ACCURACY" },
-              { value: "60%",   label: "REDUCTION IN DOWNTIME" },
-              { value: "<30s",  label: "ALERT-TO-ACTION" },
-              { value: "30",    label: "DAYS TO GO-LIVE" },
-            ].map((s) => (
-              <div key={s.label}>
-                <div className="text-6xl lg:text-7xl font-light mb-3">{s.value}</div>
-                <div className="text-xs font-light text-gray-400 tracking-widest">{s.label}</div>
-              </div>
-            ))}
+            <div>
+              <div className="text-xs font-light text-gray-400 tracking-widest mb-2">AI PREDICTION ACCURACY</div>
+              <div className="text-6xl lg:text-7xl font-light"><CountUp end={94.2} decimals={1} suffix="%" /></div>
+            </div>
+            <div>
+              <div className="text-xs font-light text-gray-400 tracking-widest mb-2">REDUCTION IN DOWNTIME</div>
+              <div className="text-6xl lg:text-7xl font-light"><CountUp end={60} suffix="%" /></div>
+            </div>
+            <div>
+              <div className="text-xs font-light text-gray-400 tracking-widest mb-2">ALERT-TO-ACTION</div>
+              <div className="text-6xl lg:text-7xl font-light">&lt;30s</div>
+            </div>
+            <div>
+              <div className="text-xs font-light text-gray-400 tracking-widest mb-2">DAYS TO GO-LIVE</div>
+              <div className="text-6xl lg:text-7xl font-light"><CountUp end={30} /></div>
+            </div>
           </div>
           <div className="border-t border-gray-200 pt-16 grid lg:grid-cols-2 gap-x-20">
-            {[
-              { label: "STATIONS UNDER MANAGEMENT",   value: "65" },
-              { label: "TOTAL INSPECTION POINTS",     value: "16,055" },
-              { label: "INSPECTION POINTS / STATION", value: "247" },
-              { label: "REPORT GENERATION TIME",      value: "<2 min" },
-              { label: "TEAM DEPLOYMENT TIME",        value: "<5 min" },
-              { label: "PLATFORM UPTIME SLA",         value: "99.9%" },
-            ].map((row) => (
-              <div key={row.label} className="flex justify-between items-baseline border-b border-gray-100 py-5">
-                <span className="text-xs font-light text-gray-400 tracking-widest">{row.label}</span>
-                <span className="text-2xl font-light">{row.value}</span>
-              </div>
-            ))}
+            <div className="flex justify-between items-baseline border-b border-gray-100 py-5">
+              <span className="text-xs font-light text-gray-400 tracking-widest">STATIONS UNDER MANAGEMENT</span>
+              <span className="text-2xl font-light"><CountUp end={65} /></span>
+            </div>
+            <div className="flex justify-between items-baseline border-b border-gray-100 py-5">
+              <span className="text-xs font-light text-gray-400 tracking-widest">TOTAL INSPECTION POINTS</span>
+              <span className="text-2xl font-light"><CountUp end={16055} /></span>
+            </div>
+            <div className="flex justify-between items-baseline border-b border-gray-100 py-5">
+              <span className="text-xs font-light text-gray-400 tracking-widest">INSPECTION POINTS / STATION</span>
+              <span className="text-2xl font-light"><CountUp end={247} /></span>
+            </div>
+            <div className="flex justify-between items-baseline border-b border-gray-100 py-5">
+              <span className="text-xs font-light text-gray-400 tracking-widest">REPORT GENERATION TIME</span>
+              <span className="text-2xl font-light">&lt;2 min</span>
+            </div>
+            <div className="flex justify-between items-baseline border-b border-gray-100 py-5">
+              <span className="text-xs font-light text-gray-400 tracking-widest">TEAM DEPLOYMENT TIME</span>
+              <span className="text-2xl font-light">&lt;5 min</span>
+            </div>
+            <div className="flex justify-between items-baseline border-b border-gray-100 py-5">
+              <span className="text-xs font-light text-gray-400 tracking-widest">PLATFORM UPTIME SLA</span>
+              <span className="text-2xl font-light"><CountUp end={99.9} decimals={1} suffix="%" /></span>
+            </div>
           </div>
         </div>
       </section>

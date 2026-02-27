@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { ArrowRight, Mail, Phone, MapPin, Linkedin, Trophy } from "lucide-react";
+import { ArrowRight, MapPin, Linkedin, Trophy } from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -230,10 +230,8 @@ export default function ContactPage() {
                 <p className="text-xs font-light tracking-widest text-gray-400 mb-8 uppercase">Contact</p>
                 <div className="space-y-0">
                   {[
-                    { icon: <Mail className="w-4 h-4" />, label: "EMAIL", value: "contact@kai-ai.com", href: "mailto:contact@kai-ai.com" },
-                    { icon: <Phone className="w-4 h-4" />, label: "PHONE", value: "(214) 555-0100", href: "tel:+12145550100" },
-                    { icon: <MapPin className="w-4 h-4" />, label: "LOCATION", value: "Dallas-Fort Worth, Texas", href: null },
-                    { icon: <Linkedin className="w-4 h-4" />, label: "LINKEDIN", value: "linkedin.com/company/kai-ai", href: "https://linkedin.com/company/kai-ai" },
+                    { icon: <MapPin className="w-4 h-4" />, label: "LOCATION", value: "Dallas, Texas", href: null },
+                    { icon: <Linkedin className="w-4 h-4" />, label: "LINKEDIN", value: "linkedin.com/in/abbasabdullah", href: "https://www.linkedin.com/in/abbasabdullah/" },
                   ].map((item) => (
                     <div key={item.label} className="flex items-baseline justify-between border-b border-gray-100 py-5">
                       <div className="flex items-center gap-3">
