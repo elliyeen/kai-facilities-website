@@ -1,6 +1,8 @@
 # KAI — The Operating System for Cities and Enterprise
 
-**[Live Site →](https://elliyeen.github.io/kai-facilities-website/)**
+**[Live Site →](https://elliyeen.github.io/kai-dart/)**
+
+**Author:** [Abdullah@elliyeen.com](mailto:Abdullah@elliyeen.com)
 
 KAI unifies data, operations, and intelligence into a single platform — turning complexity into clarity, at any scale. Built initially for DART (Dallas Area Rapid Transit), KAI is purpose-built to handle the real-world demands of large-scale infrastructure, including the 300%+ ridership surge expected during FIFA World Cup 2026.
 
@@ -23,7 +25,7 @@ KAI is built on three layers — the **Kai Fabric**:
 - [Next.js 15](https://nextjs.org) (App Router, Turbopack)
 - React 19 + TypeScript
 - Tailwind CSS v4
-- Docker + CI/CD (GitHub Actions → ECS Fargate)
+- Docker + CI/CD (GitHub Actions → GitHub Pages)
 
 ---
 
@@ -67,9 +69,8 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 ## Infrastructure
 
 - **Docker**: 3-stage Dockerfile, docker-compose for local dev
-- **Terraform**: Modules for VPC/networking, ECR, and ECS
-- **CI/CD**: GitHub Actions — lint/build on PR, deploy to ECS on push to `main`
-- **AWS Target**: ECS Fargate, us-east-1, ALB on port 80 → container 3000
+- **CI/CD**: GitHub Actions — lint/build on PR, deploy to GitHub Pages on push to `main`
+- **Live URL**: https://elliyeen.github.io/kai-dart/
 
 ---
 
