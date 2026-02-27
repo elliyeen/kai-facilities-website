@@ -36,40 +36,54 @@ export default function ContactPage() {
     <div className="min-h-screen bg-black text-white">
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-xl border-b border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" className="text-2xl font-light tracking-wider">
+          <div className="flex justify-between items-center h-16">
+            <Link href="/" className="text-base font-medium tracking-[0.3em]">
               KAI
             </Link>
-            <div className="flex items-center gap-8">
-              <Link href="/platform" className="text-sm font-light text-white/60 hover:text-white transition">
-                PLATFORM
+            <div className="hidden md:flex items-center gap-8">
+              <Link href="/platform" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">
+                Platform
               </Link>
-              <Link href="/world-cup-2026" className="text-sm font-light text-white/60 hover:text-white transition">
+              <Link href="/world-cup-2026" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">
                 FIFA 2026
               </Link>
-              <Link href="/#about" className="text-sm font-light text-white/60 hover:text-white transition">
-                ABOUT
-              </Link>
-              <Link href="/contact" className="text-sm font-light border border-white px-6 py-2 hover:bg-white hover:text-black transition">
-                CONTACT
+              <Link href="/#about" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">
+                About
               </Link>
             </div>
+            <Link
+              href="/contact"
+              className="text-[13px] border border-white/20 px-5 py-2 hover:bg-white hover:text-black hover:border-white transition-all duration-300"
+            >
+              Contact
+            </Link>
           </div>
         </div>
       </nav>
 
       {/* Hero */}
-      <section className="pt-48 pb-24 px-6">
+      <section className="pt-48 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <p className="text-sm font-light tracking-[0.4em] text-white/30 mb-8 uppercase">Contact</p>
-          <h1 className="text-6xl lg:text-8xl font-light leading-none mb-8">
-            Let's talk.
+          <p
+            className="hero-animate text-[11px] font-medium tracking-[0.4em] text-white/30 mb-10 uppercase"
+            style={{ animationDelay: "0ms" }}
+          >
+            Contact
+          </p>
+          <h1
+            className="hero-animate text-[3.5rem] sm:text-[5rem] lg:text-[7rem] font-thin leading-[0.93] tracking-[-0.03em] mb-10"
+            style={{ animationDelay: "160ms" }}
+          >
+            Let&apos;s talk.
           </h1>
-          <p className="text-xl font-light text-white/50 max-w-xl leading-relaxed">
-            Whether you're a city, transit authority, or enterprise —
-            we're ready to show you what Kai can do in your environment.
+          <p
+            className="hero-animate text-xl text-white/50 max-w-xl leading-relaxed font-light"
+            style={{ animationDelay: "320ms" }}
+          >
+            Whether you&apos;re a city, transit authority, or enterprise —
+            we&apos;re ready to show you what Kai can do in your environment.
           </p>
         </div>
       </section>
@@ -83,12 +97,12 @@ export default function ContactPage() {
             <div>
               {!submitted ? (
                 <>
-                  <p className="text-sm font-light tracking-[0.3em] text-gray-400 mb-10 uppercase">Send a Message</p>
-                  <form onSubmit={handleSubmit} className="space-y-8">
+                  <p className="text-[11px] font-medium tracking-[0.3em] text-gray-400 mb-10 uppercase">Send a Message</p>
+                  <form onSubmit={handleSubmit} className="space-y-10">
 
                     <div className="grid md:grid-cols-2 gap-8">
                       <div>
-                        <label htmlFor="name" className="block text-xs font-light tracking-widest text-gray-400 mb-3 uppercase">
+                        <label htmlFor="name" className="block text-[11px] font-medium tracking-[0.25em] text-gray-400 mb-4 uppercase">
                           Full Name *
                         </label>
                         <input
@@ -98,12 +112,12 @@ export default function ContactPage() {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full border-b border-gray-300 py-3 text-lg font-light focus:border-black outline-none transition bg-transparent placeholder:text-gray-300"
+                          className="w-full border-b border-gray-200 py-3 text-lg font-light focus:border-black outline-none transition-colors duration-200 bg-transparent placeholder:text-gray-300"
                           placeholder="Jane Smith"
                         />
                       </div>
                       <div>
-                        <label htmlFor="email" className="block text-xs font-light tracking-widest text-gray-400 mb-3 uppercase">
+                        <label htmlFor="email" className="block text-[11px] font-medium tracking-[0.25em] text-gray-400 mb-4 uppercase">
                           Email Address *
                         </label>
                         <input
@@ -113,7 +127,7 @@ export default function ContactPage() {
                           required
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full border-b border-gray-300 py-3 text-lg font-light focus:border-black outline-none transition bg-transparent placeholder:text-gray-300"
+                          className="w-full border-b border-gray-200 py-3 text-lg font-light focus:border-black outline-none transition-colors duration-200 bg-transparent placeholder:text-gray-300"
                           placeholder="jane@city.gov"
                         />
                       </div>
@@ -121,7 +135,7 @@ export default function ContactPage() {
 
                     <div className="grid md:grid-cols-2 gap-8">
                       <div>
-                        <label htmlFor="company" className="block text-xs font-light tracking-widest text-gray-400 mb-3 uppercase">
+                        <label htmlFor="company" className="block text-[11px] font-medium tracking-[0.25em] text-gray-400 mb-4 uppercase">
                           Organization
                         </label>
                         <input
@@ -130,12 +144,12 @@ export default function ContactPage() {
                           name="company"
                           value={formData.company}
                           onChange={handleChange}
-                          className="w-full border-b border-gray-300 py-3 text-lg font-light focus:border-black outline-none transition bg-transparent placeholder:text-gray-300"
+                          className="w-full border-b border-gray-200 py-3 text-lg font-light focus:border-black outline-none transition-colors duration-200 bg-transparent placeholder:text-gray-300"
                           placeholder="City of Dallas"
                         />
                       </div>
                       <div>
-                        <label htmlFor="phone" className="block text-xs font-light tracking-widest text-gray-400 mb-3 uppercase">
+                        <label htmlFor="phone" className="block text-[11px] font-medium tracking-[0.25em] text-gray-400 mb-4 uppercase">
                           Phone
                         </label>
                         <input
@@ -144,15 +158,15 @@ export default function ContactPage() {
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="w-full border-b border-gray-300 py-3 text-lg font-light focus:border-black outline-none transition bg-transparent placeholder:text-gray-300"
+                          className="w-full border-b border-gray-200 py-3 text-lg font-light focus:border-black outline-none transition-colors duration-200 bg-transparent placeholder:text-gray-300"
                           placeholder="(214) 555-0100"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="inquiryType" className="block text-xs font-light tracking-widest text-gray-400 mb-3 uppercase">
-                        I'm Interested In *
+                      <label htmlFor="inquiryType" className="block text-[11px] font-medium tracking-[0.25em] text-gray-400 mb-4 uppercase">
+                        I&apos;m interested in *
                       </label>
                       <select
                         id="inquiryType"
@@ -160,18 +174,18 @@ export default function ContactPage() {
                         required
                         value={formData.inquiryType}
                         onChange={handleChange}
-                        className="w-full border-b border-gray-300 py-3 text-lg font-light focus:border-black outline-none transition bg-transparent appearance-none cursor-pointer"
+                        className="w-full border-b border-gray-200 py-3 text-lg font-light focus:border-black outline-none transition-colors duration-200 bg-transparent appearance-none cursor-pointer"
                       >
-                        <option value="demo">Platform Demo</option>
-                        <option value="pilot">FIFA 2026 Pilot Program</option>
-                        <option value="rfp">RFP Response</option>
-                        <option value="consultation">Strategic Consultation</option>
-                        <option value="general">General Inquiry</option>
+                        <option value="demo">Platform demo</option>
+                        <option value="pilot">FIFA 2026 pilot program</option>
+                        <option value="rfp">RFP response</option>
+                        <option value="consultation">Strategic consultation</option>
+                        <option value="general">General inquiry</option>
                       </select>
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-xs font-light tracking-widest text-gray-400 mb-3 uppercase">
+                      <label htmlFor="message" className="block text-[11px] font-medium tracking-[0.25em] text-gray-400 mb-4 uppercase">
                         Message
                       </label>
                       <textarea
@@ -180,42 +194,44 @@ export default function ContactPage() {
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full border-b border-gray-300 py-3 text-lg font-light focus:border-black outline-none transition bg-transparent resize-none placeholder:text-gray-300"
+                        className="w-full border-b border-gray-200 py-3 text-lg font-light focus:border-black outline-none transition-colors duration-200 bg-transparent resize-none placeholder:text-gray-300"
                         placeholder="Tell us about your environment and timeline..."
                       />
                     </div>
 
-                    <button
-                      type="submit"
-                      className="w-full bg-black text-white py-5 text-sm font-light tracking-wide hover:bg-black/80 transition"
-                    >
-                      SEND MESSAGE
-                    </button>
+                    <div className="pt-2">
+                      <button
+                        type="submit"
+                        className="w-full bg-black text-white py-4 text-sm font-medium tracking-wide hover:bg-black/80 transition-all duration-300"
+                      >
+                        Send message
+                      </button>
+                      <p className="text-[12px] text-gray-400 text-center mt-5">
+                        By submitting you agree to our privacy policy.
+                      </p>
+                    </div>
 
-                    <p className="text-xs font-light text-gray-400 text-center">
-                      By submitting you agree to our privacy policy.
-                    </p>
                   </form>
                 </>
               ) : (
-                <div className="py-16 text-center space-y-4">
-                  <div className="text-6xl font-light text-[#FF6B35] mb-6">✓</div>
-                  <h3 className="text-3xl font-light">Message received.</h3>
-                  <p className="font-light text-gray-400 leading-relaxed">
+                <div className="py-20 space-y-6">
+                  <div className="text-5xl font-thin text-[#FF6B35] leading-none">✓</div>
+                  <h3 className="text-4xl font-thin tracking-[-0.02em]">Message received.</h3>
+                  <p className="text-gray-500 leading-relaxed font-light">
                     We respond within 24 hours.<br />In the meantime, explore the platform.
                   </p>
-                  <div className="pt-6 flex flex-col sm:flex-row gap-4 justify-center">
+                  <div className="pt-4 flex flex-col sm:flex-row gap-4">
                     <Link
                       href="/platform"
-                      className="inline-block text-sm font-light tracking-widest border border-black px-8 py-4 hover:bg-black hover:text-white transition"
+                      className="inline-flex items-center justify-center text-sm font-medium border border-black px-8 py-3.5 hover:bg-black hover:text-white transition-all duration-300 gap-2"
                     >
-                      EXPLORE PLATFORM →
+                      Explore Platform <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                     <button
                       onClick={() => setSubmitted(false)}
-                      className="text-sm font-light text-gray-400 hover:text-black transition tracking-widest"
+                      className="text-sm font-light text-gray-400 hover:text-black transition-colors duration-200"
                     >
-                      SEND ANOTHER MESSAGE
+                      Send another message
                     </button>
                   </div>
                 </div>
@@ -223,23 +239,28 @@ export default function ContactPage() {
             </div>
 
             {/* Right column */}
-            <div className="space-y-16 lg:pt-16">
+            <div className="space-y-16 lg:pt-14">
 
               {/* Contact info */}
               <div>
-                <p className="text-xs font-light tracking-widest text-gray-400 mb-8 uppercase">Contact</p>
+                <p className="text-[11px] font-medium tracking-[0.3em] text-gray-400 mb-8 uppercase">Contact</p>
                 <div className="space-y-0">
                   {[
-                    { icon: <MapPin className="w-4 h-4" />, label: "LOCATION", value: "Dallas, Texas", href: null },
-                    { icon: <Linkedin className="w-4 h-4" />, label: "LINKEDIN", value: "linkedin.com/in/abbasabdullah", href: "https://www.linkedin.com/in/abbasabdullah/" },
+                    { icon: <MapPin className="w-4 h-4" />, label: "Location", value: "Dallas, Texas", href: null },
+                    { icon: <Linkedin className="w-4 h-4" />, label: "LinkedIn", value: "linkedin.com/in/abbasabdullah", href: "https://www.linkedin.com/in/abbasabdullah/" },
                   ].map((item) => (
-                    <div key={item.label} className="flex items-baseline justify-between border-b border-gray-100 py-5">
+                    <div key={item.label} className="flex items-center justify-between border-b border-gray-100 py-5">
                       <div className="flex items-center gap-3">
                         <span className="text-gray-300">{item.icon}</span>
-                        <span className="text-xs font-light tracking-widest text-gray-400">{item.label}</span>
+                        <span className="text-[11px] font-medium text-gray-400 tracking-[0.2em] uppercase">{item.label}</span>
                       </div>
                       {item.href ? (
-                        <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="text-sm font-light hover:text-gray-500 transition border-b border-transparent hover:border-gray-400">
+                        <a
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm font-light text-gray-600 hover:text-black transition-colors duration-200 border-b border-transparent hover:border-gray-400"
+                        >
                           {item.value}
                         </a>
                       ) : (
@@ -252,18 +273,18 @@ export default function ContactPage() {
 
               {/* What happens next */}
               <div>
-                <p className="text-xs font-light tracking-widest text-gray-400 mb-8 uppercase">What Happens Next</p>
+                <p className="text-[11px] font-medium tracking-[0.3em] text-gray-400 mb-8 uppercase">What Happens Next</p>
                 <div className="space-y-0">
                   {[
-                    { step: "01", title: "Initial Response",   desc: "We reach out within 24 hours to understand your environment and goals." },
-                    { step: "02", title: "Live Platform Demo", desc: "60-minute interactive walkthrough — command center, AI prediction, and surge scenario." },
-                    { step: "03", title: "Custom Proposal",    desc: "A tailored implementation plan built around your infrastructure and timeline." },
-                    { step: "04", title: "Go Live",            desc: "From contract to live operations in 30 days. No rip-and-replace required." },
+                    { step: "01", title: "Initial response",   desc: "We reach out within 24 hours to understand your environment and goals." },
+                    { step: "02", title: "Live platform demo", desc: "60-minute interactive walkthrough — command center, AI prediction, and surge scenario." },
+                    { step: "03", title: "Custom proposal",    desc: "A tailored implementation plan built around your infrastructure and timeline." },
+                    { step: "04", title: "Go live",            desc: "From contract to live operations in 30 days. No rip-and-replace required." },
                   ].map((item) => (
-                    <div key={item.step} className="grid grid-cols-[40px_1fr] gap-4 border-b border-gray-100 py-5">
-                      <span className="text-sm font-light text-gray-300">{item.step}</span>
+                    <div key={item.step} className="grid grid-cols-[48px_1fr] gap-4 border-b border-gray-100 py-6">
+                      <span className="text-[11px] font-medium text-gray-300 tracking-[0.2em] pt-0.5">{item.step}</span>
                       <div>
-                        <div className="text-sm font-light mb-1">{item.title}</div>
+                        <div className="text-sm font-medium mb-1.5">{item.title}</div>
                         <div className="text-sm font-light text-gray-400 leading-relaxed">{item.desc}</div>
                       </div>
                     </div>
@@ -272,20 +293,20 @@ export default function ContactPage() {
               </div>
 
               {/* FIFA 2026 note */}
-              <div className="bg-black text-white p-8">
-                <Trophy className="w-5 h-5 text-white/60 mb-6" />
-                <div className="text-xs font-light tracking-widest text-white/30 mb-3 uppercase">FIFA World Cup 2026</div>
-                <div className="text-3xl font-light mb-4">{daysUntil} days.</div>
-                <p className="text-sm font-light text-white/50 leading-relaxed mb-8">
+              <div className="bg-black text-white p-10">
+                <Trophy className="w-4 h-4 text-white/40 mb-8" />
+                <div className="text-[10px] font-medium tracking-[0.35em] text-white/30 mb-4 uppercase">FIFA World Cup 2026</div>
+                <div className="text-[3rem] font-thin leading-none tracking-[-0.02em] mb-4">{daysUntil} days.</div>
+                <p className="text-sm text-white/50 leading-relaxed mb-8 font-light">
                   The window to prepare DART for a 286% ridership surge is closing.
                   June 11 – July 19, 2026. 9 matches. AT&T Stadium, Arlington.
                 </p>
                 <Link
                   href="/world-cup-2026"
-                  className="inline-flex items-center text-sm font-light border-b border-white pb-1 hover:border-white/40 transition gap-2"
+                  className="inline-flex items-center text-sm font-medium border-b border-white pb-1 hover:border-white/40 transition-colors duration-200 gap-2"
                 >
-                  VIEW FIFA 2026 ROADMAP
-                  <ArrowRight className="w-4 h-4" />
+                  View FIFA 2026 roadmap
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
 
@@ -295,17 +316,17 @@ export default function ContactPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 py-12">
+      <footer className="border-t border-white/[0.06] py-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
-            <div className="text-sm font-light text-white/40">
-              © {new Date().getFullYear()} KAI. The Operating System for Cities and Enterprise.
+            <div className="text-[13px] text-white/30">
+              © {new Date().getFullYear()} KAI — The Operating System for Cities and Enterprise.
             </div>
             <div className="flex gap-8">
-              <Link href="/platform" className="text-sm font-light text-white/40 hover:text-white transition">Platform</Link>
-              <Link href="/world-cup-2026" className="text-sm font-light text-white/40 hover:text-white transition">FIFA 2026</Link>
-              <Link href="/#about" className="text-sm font-light text-white/40 hover:text-white transition">About</Link>
-              <Link href="/contact" className="text-sm font-light text-white/40 hover:text-white transition">Contact</Link>
+              <Link href="/platform" className="text-[13px] text-white/30 hover:text-white/70 transition-colors duration-200">Platform</Link>
+              <Link href="/world-cup-2026" className="text-[13px] text-white/30 hover:text-white/70 transition-colors duration-200">FIFA 2026</Link>
+              <Link href="/#about" className="text-[13px] text-white/30 hover:text-white/70 transition-colors duration-200">About</Link>
+              <Link href="/contact" className="text-[13px] text-white/30 hover:text-white/70 transition-colors duration-200">Contact</Link>
             </div>
           </div>
         </div>
