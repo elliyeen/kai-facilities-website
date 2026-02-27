@@ -271,7 +271,7 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <FadeUp>
             <div className="mb-20">
-              <p className="text-[11px] font-medium tracking-[0.3em] text-white/30 mb-6 uppercase">Capabilities</p>
+              <p className="text-[11px] font-medium tracking-[0.3em] text-white/50 mb-6 uppercase">Capabilities</p>
               <h2 className="text-5xl lg:text-6xl font-thin tracking-[-0.02em]">Six modules. One platform.</h2>
             </div>
           </FadeUp>
@@ -363,7 +363,7 @@ export default function Home() {
             <h2 className="text-5xl lg:text-7xl xl:text-[6rem] font-thin mb-8 leading-none tracking-[-0.03em]">
               See Kai in action.
             </h2>
-            <p className="text-xl text-white/45 mb-16 max-w-2xl mx-auto leading-relaxed font-light">
+            <p className="text-xl text-white/60 mb-16 max-w-2xl mx-auto leading-relaxed font-light">
               A 60-minute live demo — command center walkthrough, AI prediction
               simulation, and a FIFA 2026 surge-event scenario.
             </p>
