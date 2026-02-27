@@ -364,7 +364,7 @@ export default function Home() {
               See Kai in action.
             </h2>
             <p className="text-xl text-white/60 mb-16 max-w-2xl mx-auto leading-relaxed font-light">
-              A 60-minute live demo — command center walkthrough, AI prediction
+              A 5-minute live demo — command center walkthrough, AI prediction
               simulation, and a FIFA 2026 surge-event scenario.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -390,14 +390,14 @@ export default function Home() {
       <footer className="border-t border-white/[0.06] py-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
-            <div className="text-[13px] text-white/30">
+            <div className="text-[13px] text-white/50">
               © {new Date().getFullYear()} KAI — The Operating System for Cities and Enterprise.
             </div>
             <div className="flex gap-8">
-              <Link href="/platform" className="text-[13px] text-white/30 hover:text-white/70 transition-colors duration-200">Platform</Link>
-              <Link href="/world-cup-2026" className="text-[13px] text-white/30 hover:text-white/70 transition-colors duration-200">FIFA 2026</Link>
-              <Link href="/#about" className="text-[13px] text-white/30 hover:text-white/70 transition-colors duration-200">About</Link>
-              <Link href="/contact" className="text-[13px] text-white/30 hover:text-white/70 transition-colors duration-200">Contact</Link>
+              <Link href="/platform" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">Platform</Link>
+              <Link href="/world-cup-2026" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">FIFA 2026</Link>
+              <Link href="/#about" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">About</Link>
+              <Link href="/contact" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">Contact</Link>
             </div>
           </div>
         </div>

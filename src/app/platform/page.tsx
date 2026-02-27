@@ -198,10 +198,10 @@ export default function PlatformPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <FadeUp>
             <div className="mb-20 border-b border-white/[0.08] pb-20">
-              <p className="text-[11px] font-medium tracking-[0.3em] text-white/30 mb-6 uppercase">Capabilities</p>
+              <p className="text-[11px] font-medium tracking-[0.3em] text-white/50 mb-6 uppercase">Capabilities</p>
               <div className="grid lg:grid-cols-2 gap-12 items-end">
                 <h2 className="text-5xl lg:text-6xl font-thin tracking-[-0.02em]">Six modules.<br />One platform.</h2>
-                <p className="text-lg text-white/50 leading-relaxed font-light">
+                <p className="text-lg text-white/65 leading-relaxed font-light">
                   From predictive AI to field execution — each module is purpose-built
                   and works as a standalone or as part of the complete Kai stack.
                 </p>
@@ -269,9 +269,9 @@ export default function PlatformPage() {
                     </div>
                   </div>
                   <h3 className="text-xl font-light mb-4">{module.title}</h3>
-                  <p className="font-light text-white/50 leading-relaxed text-sm">{module.desc}</p>
-                  <div className="mt-8 pt-6 border-t border-white/[0.08]">
-                    <div className="text-[11px] font-medium text-white/30 tracking-[0.2em] uppercase">{module.statLabel}</div>
+                  <p className="font-light text-white/65 leading-relaxed text-sm">{module.desc}</p>
+                  <div className="mt-8 pt-6 border-t border-white/10">
+                    <div className="text-[11px] font-medium text-white/50 tracking-[0.2em] uppercase">{module.statLabel}</div>
                     <div className="text-3xl font-thin mt-2 tracking-[-0.01em]">{module.stat}</div>
                   </div>
                 </div>
@@ -332,9 +332,9 @@ export default function PlatformPage() {
           <div className="grid lg:grid-cols-2 gap-20 items-start">
             <div className="lg:sticky lg:top-24">
               <FadeUp>
-                <p className="text-[11px] font-medium tracking-[0.3em] text-white/30 mb-6 uppercase">The Feedback Loop</p>
+                <p className="text-[11px] font-medium tracking-[0.3em] text-white/50 mb-6 uppercase">The Feedback Loop</p>
                 <h2 className="text-5xl font-thin mb-8 tracking-[-0.02em]">From raw data to<br />field action in<br />&lt;30 seconds.</h2>
-                <p className="text-lg text-white/50 leading-relaxed mb-12 font-light">
+                <p className="text-lg text-white/65 leading-relaxed mb-12 font-light">
                   A closed-loop system that doesn&apos;t just react — it anticipates.
                   Every action feeds back into the model, making Kai sharper with
                   every event, every inspection, every deployment.
@@ -377,13 +377,13 @@ export default function PlatformPage() {
               ].map((item, i) => (
                 <FadeUp key={item.step} delay={i * 100}>
                   <div className="grid grid-cols-[56px_1fr_auto] gap-6 items-start py-10 border-b border-white/[0.08]">
-                    <div className="text-[11px] font-medium text-white/20 tracking-[0.2em] pt-1">{item.step}</div>
+                    <div className="text-[11px] font-medium text-white/40 tracking-[0.2em] pt-1">{item.step}</div>
                     <div>
                       <h3 className="text-2xl font-light mb-3">{item.title}</h3>
-                      <p className="font-light text-white/40 leading-relaxed text-sm">{item.desc}</p>
+                      <p className="font-light text-white/60 leading-relaxed text-sm">{item.desc}</p>
                     </div>
                     <div className="text-right pt-1">
-                      <span className="text-[11px] font-medium text-white/20 tracking-[0.15em] uppercase whitespace-nowrap">{item.metric}</span>
+                      <span className="text-[11px] font-medium text-white/40 tracking-[0.15em] uppercase whitespace-nowrap">{item.metric}</span>
                     </div>
                   </div>
                 </FadeUp>
@@ -443,18 +443,18 @@ export default function PlatformPage() {
       </section>
 
       {/* Architecture */}
-      <section className="py-36 bg-black">
+      <section className="py-36 bg-[#111318]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-20">
             <FadeUp>
-              <p className="text-[11px] font-medium tracking-[0.3em] text-white/30 mb-6 uppercase">Technical Foundation</p>
+              <p className="text-[11px] font-medium tracking-[0.3em] text-white/50 mb-6 uppercase">Technical Foundation</p>
               <h2 className="text-5xl font-thin mb-8 tracking-[-0.02em]">Enterprise-grade.<br />Day-one ready.</h2>
-              <p className="text-xl text-white/50 leading-relaxed mb-6 font-light">
+              <p className="text-xl text-white/65 leading-relaxed mb-6 font-light">
                 Cloud-native open architecture. Kai integrates with your existing
                 OCC, GIS, HR, ERP, and security systems — no rip-and-replace,
                 no years-long implementation.
               </p>
-              <p className="text-lg text-white/35 leading-relaxed mb-12 font-light">
+              <p className="text-lg text-white/50 leading-relaxed mb-12 font-light">
                 From contract to live operations in 30 days.
               </p>
               <Link
@@ -477,8 +477,8 @@ export default function PlatformPage() {
                   { label: "Compliance",    value: "FTA · NIST 800-53" },
                   { label: "Go-live time",  value: "30 days" },
                 ].map((row) => (
-                  <div key={row.label} className="flex justify-between items-baseline border-b border-white/[0.07] py-5">
-                    <span className="text-[12px] text-white/35 tracking-wide">{row.label}</span>
+                  <div key={row.label} className="flex justify-between items-baseline border-b border-white/10 py-5">
+                    <span className="text-[12px] text-white/55 tracking-wide">{row.label}</span>
                     <span className="text-lg font-light">{row.value}</span>
                   </div>
                 ))}
@@ -489,15 +489,15 @@ export default function PlatformPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-44 bg-black border-t border-white/[0.06]">
+      <section className="py-44 bg-[#111318] border-t border-white/10">
         <FadeUp>
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-            <p className="text-[11px] font-medium tracking-[0.4em] text-white/30 mb-10 uppercase">Ready to See It</p>
+            <p className="text-[11px] font-medium tracking-[0.4em] text-white/50 mb-10 uppercase">Ready to See It</p>
             <h2 className="text-5xl lg:text-7xl xl:text-[6rem] font-thin mb-8 leading-none tracking-[-0.03em]">
               See Kai in action.
             </h2>
-            <p className="text-xl text-white/45 mb-16 max-w-2xl mx-auto leading-relaxed font-light">
-              A 60-minute live demo — command center walkthrough, AI prediction
+            <p className="text-xl text-white/65 mb-16 max-w-2xl mx-auto leading-relaxed font-light">
+              A 5-minute live demo — command center walkthrough, AI prediction
               simulation, and a FIFA 2026 surge-event scenario.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -523,14 +523,14 @@ export default function PlatformPage() {
       <footer className="border-t border-white/[0.06] py-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
-            <div className="text-[13px] text-white/30">
+            <div className="text-[13px] text-white/50">
               © {new Date().getFullYear()} KAI — The Operating System for Cities and Enterprise.
             </div>
             <div className="flex gap-8">
-              <Link href="/platform" className="text-[13px] text-white/30 hover:text-white/70 transition-colors duration-200">Platform</Link>
-              <Link href="/world-cup-2026" className="text-[13px] text-white/30 hover:text-white/70 transition-colors duration-200">FIFA 2026</Link>
-              <Link href="/#about" className="text-[13px] text-white/30 hover:text-white/70 transition-colors duration-200">About</Link>
-              <Link href="/contact" className="text-[13px] text-white/30 hover:text-white/70 transition-colors duration-200">Contact</Link>
+              <Link href="/platform" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">Platform</Link>
+              <Link href="/world-cup-2026" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">FIFA 2026</Link>
+              <Link href="/#about" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">About</Link>
+              <Link href="/contact" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">Contact</Link>
             </div>
           </div>
         </div>

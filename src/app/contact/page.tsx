@@ -15,11 +15,27 @@ export default function ContactPage() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setTimeout(() => setSubmitted(true), 500);
+    setSending(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? "Something went wrong.");
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to send. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const handleChange = (
@@ -202,10 +218,14 @@ export default function ContactPage() {
                     <div className="pt-2">
                       <button
                         type="submit"
-                        className="w-full bg-black text-white py-4 text-sm font-medium tracking-wide hover:bg-black/80 transition-all duration-300"
+                        disabled={sending}
+                        className="w-full bg-black text-white py-4 text-sm font-medium tracking-wide hover:bg-black/80 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        Send message
+                        {sending ? "Sending…" : "Send message"}
                       </button>
+                      {error && (
+                        <p className="text-[12px] text-red-500 text-center mt-4">{error}</p>
+                      )}
                       <p className="text-[12px] text-gray-400 text-center mt-5">
                         By submitting you agree to our privacy policy.
                       </p>
@@ -277,7 +297,7 @@ export default function ContactPage() {
                 <div className="space-y-0">
                   {[
                     { step: "01", title: "Initial response",   desc: "We reach out within 24 hours to understand your environment and goals." },
-                    { step: "02", title: "Live platform demo", desc: "60-minute interactive walkthrough — command center, AI prediction, and surge scenario." },
+                    { step: "02", title: "Live platform demo", desc: "5-minute interactive walkthrough — command center, AI prediction, and surge scenario." },
                     { step: "03", title: "Custom proposal",    desc: "A tailored implementation plan built around your infrastructure and timeline." },
                     { step: "04", title: "Go live",            desc: "From contract to live operations in 30 days. No rip-and-replace required." },
                   ].map((item) => (

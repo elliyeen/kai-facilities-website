@@ -4,13 +4,13 @@ const isGitHubPages = process.env.GITHUB_PAGES === "true";
 
 const nextConfig: NextConfig = {
   output: isGitHubPages ? "export" : "standalone",
-  basePath: isGitHubPages ? "/kai-facilities-website" : "",
-  assetPrefix: isGitHubPages ? "/kai-facilities-website/" : "",
+  basePath: isGitHubPages ? "/kai-dart" : "",
+  assetPrefix: isGitHubPages ? "/kai-dart/" : "",
   images: {
     unoptimized: true,
   },
   env: {
-    NEXT_PUBLIC_BASE_PATH: isGitHubPages ? "/kai-facilities-website" : "",
+    NEXT_PUBLIC_BASE_PATH: isGitHubPages ? "/kai-dart" : "",
   },
 };
 
