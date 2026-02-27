@@ -31,7 +31,7 @@ export default function Nav() {
                     isContact
                       ? "text-sm font-light tracking-wide border border-white px-6 py-2 text-white hover:bg-white hover:text-black transition"
                       : `text-sm font-light tracking-wide transition ${
-                          isActive ? "text-white" : "text-white/60 hover:text-white"
+                          isActive ? "text-white border-b border-[#FF6B35] pb-0.5" : "text-white/60 hover:text-white"
                         }`
                   }
                 >

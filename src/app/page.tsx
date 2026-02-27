@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Database, Workflow, Cpu } from "lucide-react";
 import WorldCupCountdown from "@/components/WorldCupCountdown";
+import Nav from "@/components/Nav";
+import CountUp from "@/components/CountUp";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -9,30 +11,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
 
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" className="text-2xl font-light tracking-wider">
-              KAI
-            </Link>
-            <div className="flex items-center gap-8">
-              <Link href="/platform" className="text-sm font-light text-white/60 hover:text-white transition">
-                PLATFORM
-              </Link>
-              <Link href="/world-cup-2026" className="text-sm font-light text-white/60 hover:text-white transition">
-                FIFA 2026
-              </Link>
-              <Link href="/#about" className="text-sm font-light text-white/60 hover:text-white transition">
-                ABOUT
-              </Link>
-              <Link href="/contact" className="text-sm font-light border border-white px-6 py-2 hover:bg-white hover:text-black transition">
-                CONTACT
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Nav />
 
       {/* Hero */}
       <section className="h-screen flex items-center justify-center relative overflow-hidden">
@@ -45,34 +24,45 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="absolute inset-0 bg-linear-to-b from-black/40 via-transparent to-black"></div>
-        {/* Subtle grid */}
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "80px 80px" }}></div>
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-          <p className="text-sm font-light tracking-[0.4em] text-white/40 mb-8 uppercase">Kai</p>
-          <h1 className="text-6xl lg:text-8xl font-light mb-8 tracking-tight leading-none">
+          <h1 className="text-6xl lg:text-8xl font-light mb-8 tracking-tight leading-none animate-fade-up">
             Operate and Monitor<br />
             <span className="text-white/60">your City and Enterprise.</span>
           </h1>
-          <p className="text-xl lg:text-2xl font-light text-white/60 mb-16 max-w-3xl mx-auto leading-relaxed">
-            Data, operations, and intelligence — unified into one platform.<br />
-            From a single transit station to an entire city network.
+          <p className="text-xl lg:text-2xl font-light text-white/60 mb-16 max-w-3xl mx-auto leading-relaxed animate-fade-up-delay">
+            Data, operations, and intelligence — unified into one platform.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-up-delay-2">
             <Link
               href="/platform"
-              className="inline-block bg-white text-black px-10 py-4 text-sm font-light tracking-wide hover:bg-white/90 transition"
+              className="w-56 text-center bg-white text-black py-4 text-sm font-light tracking-wide hover:bg-white/90 transition"
             >
               EXPLORE THE PLATFORM
             </Link>
             <Link
               href="/contact"
-              className="inline-block border border-white/30 px-10 py-4 text-sm font-light tracking-wide hover:border-white hover:bg-white/5 transition"
+              className="w-56 text-center border border-white/30 py-4 text-sm font-light tracking-wide hover:border-white hover:bg-white/5 transition"
             >
               REQUEST DEMO
             </Link>
           </div>
         </div>
       </section>
+
+      {/* Trust bar */}
+      <div className="bg-white border-b border-gray-100 py-5">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-wrap items-center justify-center gap-8 lg:gap-12 text-xs text-gray-400 tracking-widest uppercase">
+          <span>DART Authority</span>
+          <span className="text-gray-200 hidden sm:inline">·</span>
+          <span>FIFA World Cup 2026</span>
+          <span className="text-gray-200 hidden sm:inline">·</span>
+          <span>AT&amp;T Stadium, Arlington</span>
+          <span className="text-gray-200 hidden sm:inline">·</span>
+          <span>65 Live Stations</span>
+          <span className="text-gray-200 hidden sm:inline">·</span>
+          <span>16,055 Inspection Points</span>
+        </div>
+      </div>
 
       {/* The Kai Fabric */}
       <section className="py-32 bg-white text-black">
@@ -166,17 +156,22 @@ export default function Home() {
 
           {/* Stats */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 mb-20 border-t border-white/10 pt-20">
-            {[
-              { value: "65",      label: "DART STATIONS" },
-              { value: "16,055", label: "INSPECTION POINTS" },
-              { value: "94.2%",  label: "AI ACCURACY" },
-              { value: "<30s",   label: "ALERT-TO-ACTION" },
-            ].map((s) => (
-              <div key={s.label}>
-                <div className="text-5xl lg:text-6xl font-light mb-3">{s.value}</div>
-                <div className="text-xs font-light text-white/30 tracking-widest">{s.label}</div>
-              </div>
-            ))}
+            <div>
+              <div className="text-xs font-light text-white/30 tracking-widest mb-2">DART STATIONS</div>
+              <div className="text-5xl lg:text-6xl font-light"><CountUp end={65} /></div>
+            </div>
+            <div>
+              <div className="text-xs font-light text-white/30 tracking-widest mb-2">INSPECTION POINTS</div>
+              <div className="text-5xl lg:text-6xl font-light"><CountUp end={16055} /></div>
+            </div>
+            <div>
+              <div className="text-xs font-light text-white/30 tracking-widest mb-2">AI ACCURACY</div>
+              <div className="text-5xl lg:text-6xl font-light"><CountUp end={94.2} decimals={1} suffix="%" /></div>
+            </div>
+            <div>
+              <div className="text-xs font-light text-white/30 tracking-widest mb-2">ALERT-TO-ACTION</div>
+              <div className="text-5xl lg:text-6xl font-light">&lt;30s</div>
+            </div>
           </div>
 
           {/* Match day data */}
@@ -330,6 +325,7 @@ export default function Home() {
             <div className="flex gap-8">
               <Link href="/platform" className="text-sm font-light text-white/40 hover:text-white transition">Platform</Link>
               <Link href="/world-cup-2026" className="text-sm font-light text-white/40 hover:text-white transition">FIFA 2026</Link>
+              <Link href="/#about" className="text-sm font-light text-white/40 hover:text-white transition">About</Link>
               <Link href="/contact" className="text-sm font-light text-white/40 hover:text-white transition">Contact</Link>
             </div>
           </div>

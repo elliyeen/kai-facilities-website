@@ -198,20 +198,26 @@ export default function ContactPage() {
                   </form>
                 </>
               ) : (
-                <div className="border border-gray-200 p-16 text-center">
-                  <div className="w-12 h-12 border border-[#27AE60] flex items-center justify-center mx-auto mb-8">
-                    <div className="w-2 h-2 bg-[#27AE60] rounded-full"></div>
-                  </div>
-                  <h3 className="text-3xl font-light mb-4">Message received.</h3>
-                  <p className="font-light text-gray-500 mb-8">
-                    We'll be in touch within 24 hours to schedule your demo.
+                <div className="py-16 text-center space-y-4">
+                  <div className="text-6xl font-light text-[#FF6B35] mb-6">✓</div>
+                  <h3 className="text-3xl font-light">Message received.</h3>
+                  <p className="font-light text-gray-400 leading-relaxed">
+                    We respond within 24 hours.<br />In the meantime, explore the platform.
                   </p>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    className="text-sm font-light border-b border-black pb-1 hover:border-gray-400 transition"
-                  >
-                    SEND ANOTHER MESSAGE
-                  </button>
+                  <div className="pt-6 flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link
+                      href="/platform"
+                      className="inline-block text-sm font-light tracking-widest border border-black px-8 py-4 hover:bg-black hover:text-white transition"
+                    >
+                      EXPLORE PLATFORM →
+                    </Link>
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="text-sm font-light text-gray-400 hover:text-black transition tracking-widest"
+                    >
+                      SEND ANOTHER MESSAGE
+                    </button>
+                  </div>
                 </div>
               )}
             </div>

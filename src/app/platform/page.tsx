@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Database, Cpu, Workflow, BarChart3, Smartphone, Map } from "lucide-react";
+import CountUp from "@/components/CountUp";
 
 export default function PlatformPage() {
   return (
@@ -219,10 +220,10 @@ export default function PlatformPage() {
                 statLabel: "VISIBILITY",
               },
             ].map((module) => (
-              <div key={module.num} className="group">
+              <div key={module.num} className="group hover:-translate-y-1 transition-transform duration-200">
                 <div className="flex items-start justify-between mb-6">
                   <div className="text-5xl font-light text-white/20">{module.num}</div>
-                  <div className="w-9 h-9 border border-white/10 flex items-center justify-center text-white/70 transition">
+                  <div className="w-9 h-9 border border-white/10 flex items-center justify-center text-white/70 transition group-hover:border-[#FF6B35] group-hover:text-[#FF6B35]">
                     {module.icon}
                   </div>
                 </div>
