@@ -17,19 +17,24 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [humanChecked, setHumanChecked] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!humanChecked) return;
     setSending(true);
     setError(null);
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? "Something went wrong.");
+      if (!res.ok) throw new Error(data.errors?.[0]?.message ?? "Something went wrong.");
       setSubmitted(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to send. Please try again.");
@@ -215,11 +220,32 @@ export default function ContactPage() {
                       />
                     </div>
 
+                    {/* Human check */}
+                    <label className="flex items-center gap-3 cursor-pointer group">
+                      <div className="relative shrink-0">
+                        <input
+                          type="checkbox"
+                          checked={humanChecked}
+                          onChange={(e) => setHumanChecked(e.target.checked)}
+                          className="peer sr-only"
+                        />
+                        <div className="w-5 h-5 border border-gray-300 peer-checked:border-black peer-checked:bg-black transition-all duration-200" />
+                        {humanChecked && (
+                          <svg className="absolute inset-0 w-5 h-5 text-white p-0.5 pointer-events-none" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-5.121-5.121a1 1 0 011.414-1.414L8.414 12.172l6.879-6.879a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                        )}
+                      </div>
+                      <span className="text-sm font-light text-gray-500 group-hover:text-black transition-colors duration-200">
+                        I am a human
+                      </span>
+                    </label>
+
                     <div className="pt-2">
                       <button
                         type="submit"
-                        disabled={sending}
-                        className="w-full bg-black text-white py-4 text-sm font-medium tracking-wide hover:bg-black/80 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        disabled={sending || !humanChecked}
+                        className="w-full bg-black text-white py-4 text-sm font-medium tracking-wide hover:bg-black/80 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
                       >
                         {sending ? "Sending…" : "Send message"}
                       </button>
