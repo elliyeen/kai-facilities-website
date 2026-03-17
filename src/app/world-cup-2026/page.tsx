@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import HeroCountdown from "@/components/HeroCountdown";
+import Nav from "@/components/Nav";
 
 const DALLAS_MATCHES = [
   { stage: "Group Stage",  date: "Jun 14, 2026", time: "3:00 PM CT",  home: "Netherlands",          away: "Japan",                   group: "Group F" },
@@ -16,45 +17,22 @@ const DALLAS_MATCHES = [
 
 export default function WorldCup2026Page() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[#111318] text-white">
 
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" className="text-2xl font-light tracking-wider">
-              KAI
-            </Link>
-            <div className="flex items-center gap-8">
-              <Link href="/platform" className="text-sm font-light text-white/60 hover:text-white transition">
-                PLATFORM
-              </Link>
-              <Link href="/world-cup-2026" className="text-sm font-light text-white hover:text-white/70 transition">
-                FIFA 2026
-              </Link>
-              <Link href="/#about" className="text-sm font-light text-white/60 hover:text-white transition">
-                ABOUT
-              </Link>
-              <Link href="/contact" className="text-sm font-light border border-white px-6 py-2 hover:bg-white hover:text-black transition">
-                CONTACT
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Nav />
 
       {/* Hero */}
-      <section className="min-h-screen flex items-center pt-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-24 lg:py-32">
+      <section className="min-h-screen flex items-center pt-16">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-16 lg:py-32">
 
-          <p className="text-xs font-light tracking-[0.4em] text-white/30 mb-12 uppercase">
+          <p className="text-xs font-light tracking-[0.4em] text-white/50 mb-12 uppercase">
             FIFA World Cup 2026 · AT&T Stadium · Arlington, Texas
           </p>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.1] mb-6 max-w-5xl">
             9 matches at AT&T Stadium, Arlington —
           </h1>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.1] text-white/40 mb-20 max-w-5xl">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.1] text-white/65 mb-20 max-w-5xl">
             is DART prepared for the largest surge in transit demand in history?
           </h1>
 
@@ -120,16 +98,32 @@ export default function WorldCup2026Page() {
 
           <div className="border-t border-gray-200">
             {DALLAS_MATCHES.map((match, i) => (
-              <div key={i} className="grid lg:grid-cols-12 gap-6 border-b border-gray-200 py-6 items-baseline">
-                <div className="lg:col-span-2">
-                  <div className="text-sm font-light text-gray-500">{match.date}</div>
-                  <div className="text-xs font-light text-gray-400 mt-1">{match.time}</div>
+              <div key={i} className="border-b border-gray-200 py-6">
+                {/* Mobile layout */}
+                <div className="lg:hidden space-y-1.5">
+                  <div className="text-lg font-light">
+                    {match.home} <span className="text-gray-300 mx-1.5">vs</span> {match.away}
+                  </div>
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <span className="text-sm font-light text-gray-500">{match.date}</span>
+                    <span className="text-gray-300">·</span>
+                    <span className="text-xs font-light text-gray-400">{match.time}</span>
+                    <span className="text-gray-300">·</span>
+                    <span className="text-xs font-light text-gray-400 tracking-widest">{match.stage.toUpperCase()}</span>
+                  </div>
                 </div>
-                <div className="lg:col-span-6 text-lg font-light">
-                  {match.home} <span className="text-gray-300 mx-2">vs</span> {match.away}
+                {/* Desktop layout */}
+                <div className="hidden lg:grid lg:grid-cols-12 gap-6 items-baseline">
+                  <div className="lg:col-span-2">
+                    <div className="text-sm font-light text-gray-500">{match.date}</div>
+                    <div className="text-xs font-light text-gray-400 mt-1">{match.time}</div>
+                  </div>
+                  <div className="lg:col-span-6 text-lg font-light">
+                    {match.home} <span className="text-gray-300 mx-2">vs</span> {match.away}
+                  </div>
+                  <div className="lg:col-span-2 text-xs font-light text-gray-400 tracking-widest">{match.group}</div>
+                  <div className="lg:col-span-2 text-xs font-light text-gray-400 tracking-widest text-right">{match.stage.toUpperCase()}</div>
                 </div>
-                <div className="lg:col-span-2 text-xs font-light text-gray-400 tracking-widest">{match.group}</div>
-                <div className="lg:col-span-2 text-xs font-light text-gray-400 tracking-widest text-right">{match.stage.toUpperCase()}</div>
               </div>
             ))}
           </div>
@@ -138,10 +132,10 @@ export default function WorldCup2026Page() {
       </section>
 
       {/* KAI Solution */}
-      <section className="py-24 bg-black text-white">
+      <section className="py-24 bg-[#111318] text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mb-20">
-            <p className="text-sm font-light tracking-[0.3em] text-white/30 mb-6 uppercase">KAI Solution</p>
+            <p className="text-sm font-light tracking-[0.3em] text-white/50 mb-6 uppercase">KAI Solution</p>
             <h2 className="text-5xl font-light">Built for World Cup scale.</h2>
           </div>
           <div className="grid lg:grid-cols-3 gap-16">
@@ -166,11 +160,11 @@ export default function WorldCup2026Page() {
               },
             ].map((item) => (
               <div key={item.num}>
-                <div className="text-7xl font-light text-white/20 mb-4">{item.num}</div>
+                <div className="text-7xl font-light text-white/30 mb-4">{item.num}</div>
                 <h3 className="text-2xl font-light mb-4">{item.title}</h3>
-                <p className="font-light text-white/60 leading-relaxed">{item.desc}</p>
-                <div className="mt-8 pt-6 border-t border-white/10">
-                  <div className="text-xs font-light text-white/30 tracking-widest">{item.label}</div>
+                <p className="font-light text-white/70 leading-relaxed">{item.desc}</p>
+                <div className="mt-8 pt-6 border-t border-white/15">
+                  <div className="text-xs font-light text-white/50 tracking-widest">{item.label}</div>
                   <div className="text-3xl font-light mt-2">{item.stat}</div>
                 </div>
               </div>
@@ -201,14 +195,28 @@ export default function WorldCup2026Page() {
               { phase: "03", title: "Surge Capacity Testing", period: "Q1 2026",        desc: "Full-scale simulations of World Cup conditions. AI models fine-tuned, rapid response protocols validated." },
               { phase: "04", title: "FIFA World Cup 2026",    period: "Jun – Jul 2026", desc: "24/7 command center operations across 9 match days. Real-time coordination. World-class facility standards maintained." },
             ].map((item) => (
-              <div key={item.phase} className="grid lg:grid-cols-12 gap-8 border-b border-gray-200 py-10">
-                <div className="lg:col-span-1 text-3xl font-light text-gray-200">{item.phase}</div>
-                <div className="lg:col-span-3">
-                  <h3 className="text-xl font-light mb-1">{item.title}</h3>
-                  <p className="text-sm font-light text-gray-400">{item.period}</p>
+              <div key={item.phase} className="border-b border-gray-200 py-8 lg:py-10">
+                {/* Mobile */}
+                <div className="lg:hidden">
+                  <div className="flex items-baseline gap-4 mb-3">
+                    <span className="text-2xl font-light text-gray-200">{item.phase}</span>
+                    <div>
+                      <h3 className="text-xl font-light">{item.title}</h3>
+                      <p className="text-sm font-light text-gray-400 mt-0.5">{item.period}</p>
+                    </div>
+                  </div>
+                  <p className="text-base font-light text-gray-500 leading-relaxed">{item.desc}</p>
                 </div>
-                <div className="lg:col-span-8">
-                  <p className="text-lg font-light text-gray-500 leading-relaxed">{item.desc}</p>
+                {/* Desktop */}
+                <div className="hidden lg:grid lg:grid-cols-12 gap-8">
+                  <div className="lg:col-span-1 text-3xl font-light text-gray-200">{item.phase}</div>
+                  <div className="lg:col-span-3">
+                    <h3 className="text-xl font-light mb-1">{item.title}</h3>
+                    <p className="text-sm font-light text-gray-400">{item.period}</p>
+                  </div>
+                  <div className="lg:col-span-8">
+                    <p className="text-lg font-light text-gray-500 leading-relaxed">{item.desc}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -217,12 +225,12 @@ export default function WorldCup2026Page() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-black border-t border-white/10">
+      <section className="py-24 bg-[#111318] border-t border-white/10">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-5xl lg:text-6xl font-light mb-8">
             The clock is running.
           </h2>
-          <p className="text-xl font-light text-white/60 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl font-light text-white/70 mb-12 max-w-2xl mx-auto">
             Start with a pilot program across 3–5 stations. See results in 30 days.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -246,15 +254,15 @@ export default function WorldCup2026Page() {
       {/* Footer */}
       <footer className="border-t border-white/10 py-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
-            <div className="text-sm font-light text-white/40">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6 text-center lg:text-left">
+            <div className="text-sm font-light text-white/55">
               © {new Date().getFullYear()} KAI. AI-Powered Facility Intelligence.
             </div>
-            <div className="flex gap-8">
-              <Link href="/platform" className="text-sm font-light text-white/40 hover:text-white transition">Platform</Link>
-              <Link href="/world-cup-2026" className="text-sm font-light text-white/40 hover:text-white transition">FIFA 2026</Link>
-              <Link href="/#about" className="text-sm font-light text-white/40 hover:text-white transition">About</Link>
-              <Link href="/contact" className="text-sm font-light text-white/40 hover:text-white transition">Contact</Link>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
+              <Link href="/platform" className="text-sm font-light text-white/55 hover:text-white transition">Platform</Link>
+              <Link href="/world-cup-2026" className="text-sm font-light text-white/55 hover:text-white transition">FIFA 2026</Link>
+              <Link href="/#about" className="text-sm font-light text-white/55 hover:text-white transition">About</Link>
+              <Link href="/contact" className="text-sm font-light text-white/55 hover:text-white transition">Contact</Link>
             </div>
           </div>
         </div>

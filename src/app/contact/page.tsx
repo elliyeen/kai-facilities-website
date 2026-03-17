@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight, MapPin, Linkedin, Trophy } from "lucide-react";
+import Nav from "@/components/Nav";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -56,36 +57,10 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-black text-white">
 
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-xl border-b border-white/[0.06]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="text-base font-medium tracking-[0.3em]">
-              KAI
-            </Link>
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/platform" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">
-                Platform
-              </Link>
-              <Link href="/world-cup-2026" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">
-                FIFA 2026
-              </Link>
-              <Link href="/#about" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">
-                About
-              </Link>
-            </div>
-            <Link
-              href="/contact"
-              className="text-[13px] border border-white/20 px-5 py-2 hover:bg-white hover:text-black hover:border-white transition-all duration-300"
-            >
-              Contact
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Nav />
 
       {/* Hero */}
-      <section className="pt-48 pb-20 px-6">
+      <section className="pt-28 sm:pt-48 pb-16 sm:pb-20 px-6">
         <div className="max-w-7xl mx-auto">
           <p
             className="hero-animate text-[11px] font-medium tracking-[0.4em] text-white/30 mb-10 uppercase"
@@ -364,11 +339,11 @@ export default function ContactPage() {
       {/* Footer */}
       <footer className="border-t border-white/[0.06] py-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6 text-center lg:text-left">
             <div className="text-[13px] text-white/30">
               © {new Date().getFullYear()} KAI — The Operating System for Cities and Enterprise.
             </div>
-            <div className="flex gap-8">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
               <Link href="/platform" className="text-[13px] text-white/30 hover:text-white/70 transition-colors duration-200">Platform</Link>
               <Link href="/world-cup-2026" className="text-[13px] text-white/30 hover:text-white/70 transition-colors duration-200">FIFA 2026</Link>
               <Link href="/#about" className="text-[13px] text-white/30 hover:text-white/70 transition-colors duration-200">About</Link>

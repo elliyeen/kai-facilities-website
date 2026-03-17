@@ -1,42 +1,61 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Database, Cpu, Workflow, BarChart3, Smartphone, Map } from "lucide-react";
 import CountUp from "@/components/CountUp";
 import FadeUp from "@/components/FadeUp";
+import DashboardDemo from "@/components/DashboardDemo";
+import Nav from "@/components/Nav";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export default function PlatformPage() {
+  const [tab, setTab] = useState<"overview" | "demo">("overview");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("tab") === "demo") setTab("demo");
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#111318] text-white">
 
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-xl border-b border-white/[0.06]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="text-base font-medium tracking-[0.3em]">
-              KAI
-            </Link>
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/platform" className="text-[13px] text-white hover:text-white/70 transition-colors duration-200">
-                Platform
-              </Link>
-              <Link href="/world-cup-2026" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">
-                FIFA 2026
-              </Link>
-              <Link href="/#about" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">
-                About
-              </Link>
-            </div>
-            <Link
-              href="/contact"
-              className="text-[13px] border border-white/20 px-5 py-2 hover:bg-white hover:text-black hover:border-white transition-all duration-300"
-            >
-              Contact
-            </Link>
-          </div>
+      <Nav />
+
+      {/* Tab bar */}
+      <div className="sticky top-16 z-40 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex">
+          <button
+            onClick={() => setTab("overview")}
+            className={`px-4 sm:px-8 py-4 text-[10px] sm:text-[11px] font-medium tracking-[0.2em] sm:tracking-[0.25em] uppercase border-b-2 transition-all duration-200 whitespace-nowrap ${
+              tab === "overview" ? "border-black text-black" : "border-transparent text-gray-400 hover:text-black"
+            }`}
+          >
+            Platform Overview
+          </button>
+          <button
+            onClick={() => setTab("demo")}
+            className={`px-4 sm:px-8 py-4 text-[10px] sm:text-[11px] font-medium tracking-[0.2em] sm:tracking-[0.25em] uppercase border-b-2 transition-all duration-200 flex items-center gap-2 whitespace-nowrap ${
+              tab === "demo" ? "border-[#FF6B35] text-black" : "border-transparent text-gray-400 hover:text-black"
+            }`}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+            Live Command Center
+          </button>
         </div>
-      </nav>
+      </div>
+
+      {/* Demo tab */}
+      {tab === "demo" && (
+        <div className="bg-[#F7F5F0] p-6 min-h-screen">
+          <DashboardDemo />
+        </div>
+      )}
+
+      {/* Overview tab content */}
+      <div className={tab === "overview" ? "" : "hidden"}>
 
       {/* Hero */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -308,16 +327,22 @@ export default function PlatformPage() {
                 { num: "04", industry: "Healthcare",            desc: "Hospital environments where compliance, cleanliness, and response time are mission-critical. Continuous inspection and accountability.", proof: "HIPAA-compatible" },
                 { num: "05", industry: "Energy & Utilities",    desc: "Maintenance scheduling, asset inspection, and predictive failure detection for critical infrastructure.", proof: "Critical infrastructure" },
               ].map((item) => (
-                <div key={item.industry} className="grid lg:grid-cols-12 gap-8 border-b border-gray-100 py-10">
-                  <div className="lg:col-span-1 text-2xl font-thin text-gray-200 tracking-[-0.01em]">{item.num}</div>
-                  <div className="lg:col-span-3">
-                    <h3 className="text-xl font-light">{item.industry}</h3>
-                  </div>
-                  <div className="lg:col-span-6">
-                    <p className="text-lg font-light text-gray-500 leading-relaxed">{item.desc}</p>
-                  </div>
-                  <div className="lg:col-span-2 text-right">
+                <div key={item.industry} className="border-b border-gray-100 py-8 lg:py-10">
+                  {/* Mobile */}
+                  <div className="lg:hidden">
+                    <div className="flex items-baseline gap-4 mb-2">
+                      <span className="text-xl font-thin text-gray-200">{item.num}</span>
+                      <h3 className="text-xl font-light">{item.industry}</h3>
+                    </div>
+                    <p className="text-base font-light text-gray-500 leading-relaxed mb-3">{item.desc}</p>
                     <span className="text-[11px] font-medium text-gray-400 tracking-[0.2em] uppercase">{item.proof}</span>
+                  </div>
+                  {/* Desktop */}
+                  <div className="hidden lg:grid lg:grid-cols-12 gap-8 items-baseline">
+                    <div className="lg:col-span-1 text-2xl font-thin text-gray-200 tracking-[-0.01em]">{item.num}</div>
+                    <div className="lg:col-span-3"><h3 className="text-xl font-light">{item.industry}</h3></div>
+                    <div className="lg:col-span-6"><p className="text-lg font-light text-gray-500 leading-relaxed">{item.desc}</p></div>
+                    <div className="lg:col-span-2 text-right"><span className="text-[11px] font-medium text-gray-400 tracking-[0.2em] uppercase">{item.proof}</span></div>
                   </div>
                 </div>
               ))}
@@ -376,13 +401,16 @@ export default function PlatformPage() {
                 },
               ].map((item, i) => (
                 <FadeUp key={item.step} delay={i * 100}>
-                  <div className="grid grid-cols-[56px_1fr_auto] gap-6 items-start py-10 border-b border-white/[0.08]">
+                  <div className="grid grid-cols-[40px_1fr] lg:grid-cols-[56px_1fr_auto] gap-4 lg:gap-6 items-start py-10 border-b border-white/[0.08]">
                     <div className="text-[11px] font-medium text-white/40 tracking-[0.2em] pt-1">{item.step}</div>
                     <div>
-                      <h3 className="text-2xl font-light mb-3">{item.title}</h3>
+                      <div className="flex items-start justify-between gap-3 mb-3">
+                        <h3 className="text-2xl font-light">{item.title}</h3>
+                        <span className="lg:hidden text-[11px] font-medium text-white/40 tracking-[0.15em] uppercase whitespace-nowrap mt-2">{item.metric}</span>
+                      </div>
                       <p className="font-light text-white/60 leading-relaxed text-sm">{item.desc}</p>
                     </div>
-                    <div className="text-right pt-1">
+                    <div className="hidden lg:block text-right pt-1">
                       <span className="text-[11px] font-medium text-white/40 tracking-[0.15em] uppercase whitespace-nowrap">{item.metric}</span>
                     </div>
                   </div>
@@ -489,11 +517,11 @@ export default function PlatformPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-44 bg-[#111318] border-t border-white/10">
+      <section className="py-20 sm:py-44 bg-[#111318] border-t border-white/10">
         <FadeUp>
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
             <p className="text-[11px] font-medium tracking-[0.4em] text-white/50 mb-10 uppercase">Ready to See It</p>
-            <h2 className="text-5xl lg:text-7xl xl:text-[6rem] font-thin mb-8 leading-none tracking-[-0.03em]">
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl xl:text-[6rem] font-thin mb-8 leading-none tracking-[-0.03em]">
               See Kai in action.
             </h2>
             <p className="text-xl text-white/65 mb-16 max-w-2xl mx-auto leading-relaxed font-light">
@@ -522,11 +550,11 @@ export default function PlatformPage() {
       {/* Footer */}
       <footer className="border-t border-white/[0.06] py-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6 text-center lg:text-left">
             <div className="text-[13px] text-white/50">
               © {new Date().getFullYear()} KAI — The Operating System for Cities and Enterprise.
             </div>
-            <div className="flex gap-8">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
               <Link href="/platform" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">Platform</Link>
               <Link href="/world-cup-2026" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">FIFA 2026</Link>
               <Link href="/#about" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">About</Link>
@@ -535,6 +563,8 @@ export default function PlatformPage() {
           </div>
         </div>
       </footer>
+
+      </div> {/* end overview wrapper */}
 
     </div>
   );

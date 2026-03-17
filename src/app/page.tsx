@@ -4,6 +4,7 @@ import { ArrowRight, Database, Workflow, Cpu } from "lucide-react";
 import WorldCupCountdown from "@/components/WorldCupCountdown";
 import FadeUp from "@/components/FadeUp";
 import CountUp from "@/components/CountUp";
+import Nav from "@/components/Nav";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -11,33 +12,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
 
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-xl border-b border-white/[0.06]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="text-base font-medium tracking-[0.3em]">
-              KAI
-            </Link>
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/platform" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">
-                Platform
-              </Link>
-              <Link href="/world-cup-2026" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">
-                FIFA 2026
-              </Link>
-              <Link href="/#about" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">
-                About
-              </Link>
-            </div>
-            <Link
-              href="/contact"
-              className="text-[13px] border border-white/20 px-5 py-2 hover:bg-white hover:text-black hover:border-white transition-all duration-300"
-            >
-              Contact
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Nav />
 
       {/* Hero */}
       <section className="h-screen flex flex-col items-center justify-center relative overflow-hidden">
@@ -77,7 +52,7 @@ export default function Home() {
             style={{ animationDelay: "520ms" }}
           >
             <Link
-              href="/platform"
+              href="/platform?tab=demo"
               className="bg-white text-black px-10 py-3.5 text-sm font-medium tracking-wide hover:bg-white/90 transition-all duration-300"
             >
               Explore the Platform
@@ -356,11 +331,11 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-44 bg-[#111318] border-t border-white/[0.06]">
+      <section className="py-20 sm:py-44 bg-[#111318] border-t border-white/[0.06]">
         <FadeUp>
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
             <p className="text-[11px] font-medium tracking-[0.4em] text-white/50 mb-10 uppercase">Get Started</p>
-            <h2 className="text-5xl lg:text-7xl xl:text-[6rem] font-thin mb-8 leading-none tracking-[-0.03em]">
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl xl:text-[6rem] font-thin mb-8 leading-none tracking-[-0.03em]">
               See Kai in action.
             </h2>
             <p className="text-xl text-white/60 mb-16 max-w-2xl mx-auto leading-relaxed font-light">
@@ -375,7 +350,7 @@ export default function Home() {
                 Request a live demo
               </Link>
               <Link
-                href="/platform"
+                href="/platform?tab=demo"
                 className="border border-white/20 px-12 py-4 text-sm font-medium tracking-wide hover:border-white/50 transition-all duration-300 inline-flex items-center justify-center gap-2"
               >
                 Explore platform
@@ -389,11 +364,11 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-white/[0.06] py-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6 text-center lg:text-left">
             <div className="text-[13px] text-white/50">
               © {new Date().getFullYear()} KAI — The Operating System for Cities and Enterprise.
             </div>
-            <div className="flex gap-8">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
               <Link href="/platform" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">Platform</Link>
               <Link href="/world-cup-2026" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">FIFA 2026</Link>
               <Link href="/#about" className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">About</Link>
