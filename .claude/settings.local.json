@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__playwright__browser_navigate",
+      "Bash(lsof:*)",
+      "Bash(npm run build:*)",
+      "Bash(xargs kill:*)",
+      "Bash(open:*)"
+    ]
+  }
+}
