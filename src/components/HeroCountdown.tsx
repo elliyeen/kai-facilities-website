@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 
 function getTimeLeft() {
-  const diff = new Date("2026-06-11T00:00:00").getTime() - Date.now();
+  // First AT&T Stadium match: Jun 14, 2026 at 3:00 PM CDT = 20:00 UTC
+  const diff = new Date("2026-06-14T20:00:00Z").getTime() - Date.now();
   if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
   return {
     days: Math.floor(diff / (1000 * 60 * 60 * 24)),
@@ -32,20 +33,25 @@ export default function HeroCountdown() {
   ];
 
   return (
-    <div className="flex items-end gap-4 lg:gap-8">
-      {units.map((unit, i) => (
-        <div key={unit.label} className="flex items-end gap-4 lg:gap-8">
-          {i > 0 && (
-            <div className="text-3xl lg:text-5xl font-light text-white/20 pb-7">:</div>
-          )}
-          <div>
-            <div className="text-5xl sm:text-6xl lg:text-7xl font-light tabular-nums leading-none">
-              {unit.value}
+    <div>
+      <div className="flex items-end gap-4 lg:gap-8">
+        {units.map((unit, i) => (
+          <div key={unit.label} className="flex items-end gap-4 lg:gap-8">
+            {i > 0 && (
+              <div className="text-3xl lg:text-5xl font-light text-white/20 pb-7">:</div>
+            )}
+            <div>
+              <div className="text-5xl sm:text-6xl lg:text-7xl font-light tabular-nums leading-none">
+                {unit.value}
+              </div>
+              <div className="text-xs font-light text-white/40 mt-3 tracking-[0.25em]">{unit.label}</div>
             </div>
-            <div className="text-xs font-light text-white/40 mt-3 tracking-[0.25em]">{unit.label}</div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+      <p className="text-xs font-light text-white/35 mt-6 tracking-[0.3em] uppercase">
+        Until first match · AT&amp;T Stadium · Jun 14, 2026
+      </p>
     </div>
   );
 }

@@ -26,7 +26,7 @@ export default function WorldCup2026Page() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-16 lg:py-32">
 
           <p className="text-xs font-light tracking-[0.4em] text-white/50 mb-12 uppercase">
-            FIFA World Cup 2026 · AT&T Stadium · Arlington, Texas
+            FIFA World Cup 2026 · 9 Match Days · AT&T Stadium · Arlington, Texas
           </p>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light leading-[1.1] mb-6 max-w-5xl">

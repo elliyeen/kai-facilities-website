@@ -100,12 +100,12 @@ export default function PlatformPage() {
             >
               Request a demo
             </Link>
-            <Link
-              href="#platform"
+            <button
+              onClick={() => setTab("demo")}
               className="border border-white/30 px-10 py-3.5 text-sm font-medium tracking-wide hover:border-white/60 hover:bg-white/[0.04] transition-all duration-300 inline-flex items-center justify-center gap-2"
             >
               Explore the platform <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+            </button>
           </div>
         </div>
 
