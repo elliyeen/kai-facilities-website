@@ -889,6 +889,20 @@ function StationView({ lineId, selectedId, onSelect, onReport }: { lineId:string
                   {style.label}
                 </span>
               </div>
+              <div style={{ marginTop:12 }}>
+                <a
+                  href={["mockingbird","downtown-plano","addison"].includes(selected.id) ? `/dart/station/${selected.id}` : "/dart"}
+                  style={{
+                    display:"inline-flex", alignItems:"center", gap:6,
+                    fontFamily:"'Barlow Condensed'", fontSize:9, fontWeight:700, letterSpacing:"0.18em", textTransform:"uppercase",
+                    padding:"5px 12px", borderRadius:2, cursor:"pointer",
+                    background:"#2C3E50", color:"#FFFFFF", textDecoration:"none",
+                    border:"none",
+                  }}>
+                  <span style={{ width:5, height:5, borderRadius:"50%", background:"#27AE60", flexShrink:0 }}/>
+                  Station Intelligence
+                </a>
+              </div>
             </div>
 
             {/* Issues */}
@@ -897,7 +911,7 @@ function StationView({ lineId, selectedId, onSelect, onReport }: { lineId:string
                 <div style={{ fontFamily:"'Barlow Condensed'", fontSize:9, fontWeight:600, letterSpacing:"0.25em", textTransform:"uppercase", color:T.textMuted }}>Open Issues</div>
                 <button
                   onClick={() => onReport(selected.name)}
-                  style={{ fontFamily:"'Barlow Condensed'", fontSize:9, fontWeight:700, letterSpacing:"0.15em", textTransform:"uppercase", padding:"4px 10px", borderRadius:2, border:"none", cursor:"pointer", background:"#111827", color:"#FFFFFF" }}>
+                  style={{ fontFamily:"'Barlow Condensed'", fontSize:9, fontWeight:700, letterSpacing:"0.15em", textTransform:"uppercase", padding:"5px 10px", borderRadius:2, border:"none", cursor:"pointer", background:"#111827", color:"#FFFFFF", minWidth:148, textAlign:"center" }}>
                   REPORT ISSUE
                 </button>
               </div>
@@ -933,7 +947,7 @@ function StationView({ lineId, selectedId, onSelect, onReport }: { lineId:string
                   className={ds === "deployed" ? "deploy-btn-deployed" : ds === "deploying" ? "deploy-btn-dispatching" : ""}
                   style={{
                     fontFamily:"'Barlow Condensed'", fontSize:9, fontWeight:700, letterSpacing:"0.15em", textTransform:"uppercase",
-                    padding:"4px 10px", borderRadius:2, border:"none",
+                    padding:"5px 10px", borderRadius:2, border:"none", minWidth:148, textAlign:"center",
                     cursor: ds === "idle" ? "pointer" : "default",
                     background: ds === "deployed" ? "#14532D" : ds === "deploying" ? "#374151" : deployHovered ? "#C9A84C" : "#111827",
                     color: ds === "deployed" ? "#86EFAC" : ds === "deploying" ? "#D1D5DB" : deployHovered ? "#111827" : "#FFFFFF",

@@ -6,7 +6,6 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "/dart", label: "DART" },
   { href: "/platform", label: "Platform" },
   { href: "/world-cup-2026", label: "FIFA 2026" },
   { href: "/#about", label: "About" },
