@@ -1,7 +1,11 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import AppHeader from '@/components/app/AppHeader'
-import { getStation, INCIDENTS, WORK_ORDERS, formatRelativeTime } from '@/lib/app/data'
+import { STATIONS, getStation, INCIDENTS, WORK_ORDERS, formatRelativeTime } from '@/lib/app/data'
+
+export function generateStaticParams() {
+  return STATIONS.map(s => ({ id: s.id }))
+}
 import { MapPin, Clock, AlertCircle, Wrench, ChevronRight } from 'lucide-react'
 import PriorityBadge from '@/components/app/PriorityBadge'
 import StatusPill from '@/components/app/StatusPill'
